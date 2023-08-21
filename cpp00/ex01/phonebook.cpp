@@ -12,7 +12,10 @@ void	Contact::set_data(std::string input[])
 
 PhoneBook::PhoneBook(void){
 	std::cout << "PhoneBook instant was created" << std::endl;
+}
 
+PhoneBook::~PhoneBook(void){
+	std::cout << "PhoneBook was destroyed!!" << std::endl;
 }
 
 void PhoneBook::add(void) {
