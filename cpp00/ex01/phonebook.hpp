@@ -8,7 +8,7 @@ class Contact {
 		std::string phone;
 		std::string secret;
 		void set_data(std::string input[]);
-}
+};
 
 class PhoneBook {
 	public:
