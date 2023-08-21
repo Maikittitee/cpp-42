@@ -2,20 +2,21 @@
 
 class Contact {
 	public:
-		string firstname;
-		string lastname;
-		string nickname;
-		string phone;
-		string secret;
+		std::string firstname;
+		std::string lastname;
+		std::string nickname;
+		std::string phone;
+		std::string secret;
+		void set_data(std::string input[]);
 }
 
 class PhoneBook {
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		add(void);
-		search(void);
-		display(void);
+		void add(void);
+		void search(void);
+		void display(void);
 		static int	current_index;
 	private:
 		Contact contact[8];
