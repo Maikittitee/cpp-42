@@ -13,27 +13,29 @@ std::string Contact::get_firstname(void)
 {
 	return (this->firstname);
 }
+
 std::string Contact::get_lastname(void)
 {
 	return (this->lastname);
 }
+
 std::string Contact::get_nickname(void)
 {
 	return (this->nickname);
 }
+
 std::string Contact::get_phone(void)
 {
 	return (this->phone);
 }
+
 std::string Contact::get_secret(void)
 {
-	return (this->get_secret);
+	return (this->secret);
 }
 
-
-
 PhoneBook::PhoneBook(void){
-	std::cout << "PhoneBook instant was created" << std::endl;
+	std::cout << "PhoneBook was created" << std::endl;
 }
 
 PhoneBook::~PhoneBook(void){
@@ -53,7 +55,7 @@ void PhoneBook::add(void) {
 	getline(std::cin, input[3]);
 	std::cout<< "number: " << std::endl;
 	getline(std::cin, input[4]);
-	// check err
+	// check err here
 	this->contact[current_index].set_data(input);
 	current_index++;
 	current_index %= 8;
