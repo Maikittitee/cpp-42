@@ -7,7 +7,12 @@ class Contact {
 		std::string nickname;
 		std::string phone;
 		std::string secret;
-		void set_data(std::string input[]);
+		std::string get_firstname(void);
+		std::string get_lastname(void);
+		std::string get_nickname(void);
+		std::string get_phone(void);
+		std::string get_secret(void);
+		void set_data(std::string input[5]);
 };
 
 class PhoneBook {
