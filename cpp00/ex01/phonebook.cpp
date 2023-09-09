@@ -1,5 +1,23 @@
 #include "phonebook.hpp"
 
+void	printInLength(std::string s, int lenght)
+{
+	int space;
+
+	if (s.length() > lenght)
+	{
+		std::cout << s.substr(0, lenght - 1) << '.' << '|';
+	}
+	else
+	{
+		space = lenght - s.length();
+		for (int i = 0; i < space; i++)
+			std::cout << ' ';
+		std::cout << s << '|'
+	}
+	
+}
+
 void	Contact::set_data(std::string input[])
 {
 	this->firstname = input[0];	
