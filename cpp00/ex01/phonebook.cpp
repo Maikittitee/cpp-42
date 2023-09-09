@@ -13,7 +13,7 @@ void	printInLength(std::string s, int lenght)
 		space = lenght - s.length();
 		for (int i = 0; i < space; i++)
 			std::cout << ' ';
-		std::cout << s << '|'
+		std::cout << s << '|';
 	}
 	
 }
