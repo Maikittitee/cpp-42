@@ -23,8 +23,24 @@ void	Contact::set_data(std::string input[])
 	this->firstname = input[0];	
 	this->lastname = input[1];	
 	this->nickname = input[2];	
-	this->secret = input[3];	
-	this->phone = input[4];	
+	this->phone = input[3];	
+	this->secret = input[4];	
+}
+
+void	Contact::show_contact(int mode)
+{
+	if (mode == 0)
+	{
+		std::cout << '|';
+		printInLength(this->firstname, 10);
+		printInLength(this->lastname, 10);
+		printInLength(this->nickname, 10);
+		printInLength(this->phone, 10);
+		std::cout << std::endl;
+	}
+
+
+
 }
 
 std::string Contact::get_firstname(void)
@@ -60,21 +76,79 @@ PhoneBook::~PhoneBook(void){
 	std::cout << "PhoneBook was destroyed!!" << std::endl;
 }
 
+bool PhoneBook::isInputError()
+{
+	return (false);
+}
+
 void PhoneBook::add(void) {
 	std::string input[5];
 
-	std::cout<< "firstname " << std::endl;
+	std::cout<< "firstname ";
 	getline(std::cin, input[0]);
-	std::cout<< "lastname: " << std::endl;
+	std::cout<< "lastname: ";
 	getline(std::cin, input[1]);
-	std::cout<< "nickname: " << std::endl;
+	std::cout<< "nickname: ";
 	getline(std::cin, input[2]);
-	std::cout<< "darkest secret: " << std::endl;
+	std::cout<< "number: ";
 	getline(std::cin, input[3]);
-	std::cout<< "number: " << std::endl;
+	std::cout<< "darkest secret: ";
 	getline(std::cin, input[4]);
-	// check err here
-	this->contact[current_index].set_data(input);
-	current_index++;
-	current_index %= 8;
+	if (!this->isInputError())
+	{
+		this->contact[current_index].set_data(input);
+		current_index++;
+		current_index %= 8;
+	}
+
+}
+
+bool isStrDigit(std::string s)
+{
+	for (int i = 0; i < s.length(); i++)
+	{
+		if (!isdigit(s[i]))
+			return (false);
+	}
+	return (true);
+}
+
+void	PhoneBook::search(void)
+{
+	int			i;
+	int			target;
+	std::string	input;
+
+	i = 0;	
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "| firstname| lastname | nickname |  phone   |" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	while (i < this->current_index)
+	{
+		this->contact[i].show_contact(0);
+		i++;
+	}
+	std::cout << "Enter Index: ";
+	getline(std::cin, input);
+	if (!isStrDigit(input))
+	{
+		std::cerr << "Stop It, Get Some Help." << std::endl;
+		return ;
+	}
+	target = stoi(input);
+	if (target >= this->current_index)
+	{
+		std::cerr << "Stop It, Get Some Help." << std::endl;
+		return ;
+	}
+	std::cout << "Firstname: ";
+	std::cout << this->contact[target].get_firstname() << std::endl;
+	std::cout << "Lastname: ";
+	std::cout << this->contact[target].get_lastname() << std::endl;
+	std::cout << "Nickname: ";
+	std::cout << this->contact[target].get_nickname() << std::endl;
+	std::cout << "Phone: ";
+	std::cout << this->contact[target].get_phone() << std::endl;
+	std::cout << "Secret: ";
+	std::cout << this->contact[target].get_secret() << std::endl;	
 }

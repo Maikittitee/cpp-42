@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 class Contact {
 	public:
@@ -13,7 +14,7 @@ class Contact {
 		std::string get_phone(void);
 		std::string get_secret(void);
 		void set_data(std::string input[5]);
-		void show_contact(void);
+		void show_contact(int mode);
 };
 
 class PhoneBook {
@@ -22,9 +23,10 @@ class PhoneBook {
 		~PhoneBook(void);
 		void add(void);
 		void search(void);
-		void display(void);
-		static int	current_index;
+		int	current_index;
 	private:
+		bool isInputError(void);
+		void display(void);
 		Contact contact[8];
 
 };
