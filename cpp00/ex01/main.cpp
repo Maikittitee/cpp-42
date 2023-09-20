@@ -27,7 +27,7 @@ int	main(void)
 		else if (input.compare("exit") == 0)
 			exit(0);
 		else
-			std::cout << "cmd not found" << std::endl;  
+			std::cout << "cmd not found (accept only ADD, SEARCH, EXIT)" << std::endl;  
 	}
 	return (0);
 }

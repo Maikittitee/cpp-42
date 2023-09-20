@@ -27,11 +27,12 @@ void	Contact::set_data(std::string input[])
 	this->secret = input[4];	
 }
 
-void	Contact::show_contact(int mode)
+void	Contact::show_contact(int mode, int index)
 {
 	if (mode == 0)
 	{
 		std::cout << '|';
+		printInLength(index + "", 10);
 		printInLength(this->firstname, 10);
 		printInLength(this->lastname, 10);
 		printInLength(this->nickname, 10);
@@ -121,11 +122,11 @@ void	PhoneBook::search(void)
 
 	i = 0;	
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "| firstname| lastname | nickname |  phone   |" << std::endl;
+	std::cout << "|     index| firstname| lastname | nickname |" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	while (i < this->current_index)
+	while (i < 9)
 	{
-		this->contact[i].show_contact(0);
+		this->contact[i].show_contact(0, i);
 		i++;
 	}
 	std::cout << "Enter Index: ";
