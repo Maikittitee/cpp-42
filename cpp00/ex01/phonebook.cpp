@@ -27,21 +27,17 @@ void	Contact::set_data(std::string input[])
 	this->secret = input[4];	
 }
 
-void	Contact::show_contact(int mode, int index)
+void	Contact::show_contact(int mode, std::string index)
 {
 	if (mode == 0)
 	{
 		std::cout << '|';
-		printInLength(index + "", 10);
+		printInLength(index, 10);
 		printInLength(this->firstname, 10);
 		printInLength(this->lastname, 10);
 		printInLength(this->nickname, 10);
-		printInLength(this->phone, 10);
 		std::cout << std::endl;
 	}
-
-
-
 }
 
 std::string Contact::get_firstname(void)
@@ -77,8 +73,26 @@ PhoneBook::~PhoneBook(void){
 	std::cout << "PhoneBook was destroyed!!" << std::endl;
 }
 
-bool PhoneBook::isInputError()
+bool isAllSpace(std::string str)
 {
+	if (str.length() == 0)
+		return (true);
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (!isspace(str[i]))
+			return (false);
+	}
+	return (true);
+}
+
+bool PhoneBook::isInputError(std::string input[5])
+{
+	for (int i = 0; i < 5; i++)
+	{
+		if (isAllSpace(input[i]))
+			return (true);
+	}
+
 	return (false);
 }
 
@@ -86,19 +100,23 @@ void PhoneBook::add(void) {
 	std::string input[5];
 
 	std::cout<< "firstname ";
-	getline(std::cin, input[0]);
+	std::getline(std::cin, input[0]);
 	std::cout<< "lastname: ";
-	getline(std::cin, input[1]);
+	std::getline(std::cin, input[1]);
 	std::cout<< "nickname: ";
-	getline(std::cin, input[2]);
+	std::getline(std::cin, input[2]);
 	std::cout<< "number: ";
-	getline(std::cin, input[3]);
+	std::getline(std::cin, input[3]);
 	std::cout<< "darkest secret: ";
-	getline(std::cin, input[4]);
-	if (!this->isInputError())
+	std::getline(std::cin, input[4]);
+	if (this->isInputError(input))
+		std::cout << "STDIN ERROR" << std::endl;
+	else
 	{
 		this->contact[current_index].set_data(input);
 		current_index++;
+		if (max_index < 8)
+			max_index++;
 		current_index %= 8;
 	}
 
@@ -119,14 +137,15 @@ void	PhoneBook::search(void)
 	int			i;
 	int			target;
 	std::string	input;
+	std::string eiei[9] = {"0", "1", "2", "3", "4", "5", "6", "7", "8"};
 
 	i = 0;	
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|     index| firstname| lastname | nickname |" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	while (i < 9)
+	while (i < max_index)
 	{
-		this->contact[i].show_contact(0, i);
+		this->contact[i].show_contact(0, eiei[i]);
 		i++;
 	}
 	std::cout << "Enter Index: ";
