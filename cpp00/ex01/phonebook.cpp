@@ -20,11 +20,11 @@ void	printInLength(std::string s, int lenght)
 
 void	Contact::set_data(std::string input[])
 {
-	this->firstname = input[0];	
-	this->lastname = input[1];	
-	this->nickname = input[2];	
-	this->phone = input[3];	
-	this->secret = input[4];	
+	this->_firstname = input[0];	
+	this->_lastname = input[1];	
+	this->_nickname = input[2];	
+	this->_phone = input[3];	
+	this->_secret = input[4];	
 }
 
 void	Contact::show_contact(int mode, std::string index)
@@ -33,36 +33,36 @@ void	Contact::show_contact(int mode, std::string index)
 	{
 		std::cout << '|';
 		printInLength(index, 10);
-		printInLength(this->firstname, 10);
-		printInLength(this->lastname, 10);
-		printInLength(this->nickname, 10);
+		printInLength(this->_firstname, 10);
+		printInLength(this->_lastname, 10);
+		printInLength(this->_nickname, 10);
 		std::cout << std::endl;
 	}
 }
 
 std::string Contact::get_firstname(void)
 {
-	return (this->firstname);
+	return (this->_firstname);
 }
 
 std::string Contact::get_lastname(void)
 {
-	return (this->lastname);
+	return (this->_lastname);
 }
 
 std::string Contact::get_nickname(void)
 {
-	return (this->nickname);
+	return (this->_nickname);
 }
 
 std::string Contact::get_phone(void)
 {
-	return (this->phone);
+	return (this->_phone);
 }
 
 std::string Contact::get_secret(void)
 {
-	return (this->secret);
+	return (this->_secret);
 }
 
 PhoneBook::PhoneBook(void){
@@ -150,7 +150,7 @@ void	PhoneBook::search(void)
 	}
 	std::cout << "Enter Index: ";
 	getline(std::cin, input);
-	if (!isStrDigit(input))
+	if (isAllSpace(input) || !isStrDigit(input))
 	{
 		std::cerr << "Stop It, Get Some Help." << std::endl;
 		return ;
