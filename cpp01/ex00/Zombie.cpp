@@ -12,7 +12,7 @@ Zombie::~Zombie(void)
 
 void Zombie::announce( void )
 {
-	std::cout << this->_name << ': ' << "BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": "<< "BraiiiiiiinnnzzzZ..." << std::endl;
 
 }
 
@@ -28,5 +28,13 @@ void randomChump( std::string name )
 	random_chump.announce();
 }
 
+int	main(void)
+{
+	Zombie *my_zom = newZombie("NongMai");
 
+	my_zom->announce();
+	randomChump("someone");
+
+	delete my_zom;
+}
 
