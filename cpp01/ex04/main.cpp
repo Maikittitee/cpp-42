@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 
-bool readFile(char *&buff, std::string const &filename)
+typedef std::string  string ;
+
+bool readFile(string &buff, std::string const &filename)
 {
 	std::ifstream file(filename);
 	int length;
@@ -13,46 +15,56 @@ bool readFile(char *&buff, std::string const &filename)
 	}
 	length = file.tellg();
 
-	// std::cout << length << std::endl;
-
-	// create buffer with correct size
 	char *buffer = new char[length];
 	file.seekg(0, std::ios::beg);
 	file.read(buffer, length);
-	// std::cout << buffer << std::endl;
-	// std::cout << "eiei" << std::endl;
 	file.close();
 	buff = buffer;
 	return (true);
 
 }
 
-bool writeFile(char *&buff, std::string const &filename)
+void	replace_str(std::string &str, std::string s1, std::string s2)
 {
-	// do replease
-	
+	size_t	found_pos = 0;
+	int		index = 0;
+
+	if (s1.empty() || s2.empty())
+		return ;
+	while (true)
+	{
+		found_pos = str.find(s1, index);
+		if (found_pos > str.size())
+			break ;
+		str.erase(found_pos, s1.length());
+		str.insert(found_pos, s2);
+		index = found_pos + s2.length();
+	}
+}
+
+bool writeFile(string &buff, std::string const &filename, std::string s1, std::string s2)
+{
 	std::ofstream file(filename + ".replace");
 
 	if (!file.is_open()){
 		std::cerr << "Can't Open The File" << std::endl;
 		return (false);
 	}
+	replace_str(buff, s1, s2);
 	file << buff;
 	return (true);
 
 }
 
+int main( int ac, char **argv) 
+{
+	std::string buff;
 
-
-int main() {
-	
-	std::string filename = "test.txt";
-	char *buff;
-
-	readFile(buff ,filename);
+	readFile(buff , argv[1]);
 	std::cout << buff << std::endl;
-	writeFile(buff, filename);
+	if (ac != 4)
+		return (1);
+	writeFile(buff, argv[1], argv[2], argv[3]);
 
-	delete buff;
 	return 0;
 }
