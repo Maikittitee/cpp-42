@@ -1,5 +1,17 @@
 #include "Harl.hpp"
 
+Harl::Harl( void ){
+	this->_level[0] = "DEBUG";
+	this->_level[1] = "INFO";
+	this->_level[2] = "WARNING";
+	this->_level[3] = "ERROR";
+	this->func_ptr[0] = &(Harl::debug);
+	this->func_ptr[1] = &(Harl::debug);
+	this->func_ptr[2] = &(Harl::debug);
+	this->func_ptr[3] = &(Harl::debug);
+
+}
+
 void	Harl::debug( void ){
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special- ketchup burger. I really do!" << std::endl;
 }
@@ -14,4 +26,10 @@ void	Harl::warning( void ){
 
 void	Harl::error( void ){
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void	Harl::complain ( std::string level )
+{
+	
+
 }
