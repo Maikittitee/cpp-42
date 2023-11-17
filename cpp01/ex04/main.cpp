@@ -1,36 +1,58 @@
 #include <iostream>
-#include <string>
 #include <fstream>
 
-int	main(int argc, char *argv[])
+bool readFile(char *&buff, std::string const &filename)
 {
-	std::fstream file;
-	std::string		line;
-	std::string		newline;
-	int				i = 0;
-	if (argc == 4)
-	{
-		file.open(argv[1], std::ios::in | std::ios::out);
-		if (file.is_open())
-		{
-			while (getline(file, line))
-				newline.append(line);
-		}
-		file.close();
-		file.open(argv[1], std::ios::out | std::ios::trunc);
-		while (newline[i])
-		{
-			if (newline.compare(i, std::string(argv[2]).length(), argv[2]) == 0)
-			{
-				file << argv[3];
-				i += std::string(argv[2]).length();
-				continue ;
-			}
-			else
-				file << newline[i];
-			i++;
-		}
-		// file << std::endl;
-		file.close();
+	std::ifstream file(filename);
+	int length;
+	file.seekg(0, std::ios::end);
+
+	if (!file.is_open()){
+		std::cerr << "Can't Open The File" << std::endl;
+		return (false);
 	}
+	length = file.tellg();
+
+	// std::cout << length << std::endl;
+
+	// create buffer with correct size
+	char *buffer = new char[length];
+	file.seekg(0, std::ios::beg);
+	file.read(buffer, length);
+	// std::cout << buffer << std::endl;
+	// std::cout << "eiei" << std::endl;
+	file.close();
+	buff = buffer;
+	return (true);
+
+}
+
+bool writeFile(char *&buff, std::string const &filename)
+{
+	// do replease
+	
+	std::ofstream file(filename + ".replace");
+
+	if (!file.is_open()){
+		std::cerr << "Can't Open The File" << std::endl;
+		return (false);
+	}
+	file << buff;
+	return (true);
+
+}
+
+
+
+int main() {
+	
+	std::string filename = "test.txt";
+	char *buff;
+
+	readFile(buff ,filename);
+	std::cout << buff << std::endl;
+	writeFile(buff, filename);
+
+	delete buff;
+	return 0;
 }
