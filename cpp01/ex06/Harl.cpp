@@ -56,7 +56,7 @@ void	Harl::complainFilter ( std::string level )
 			(this->*func_ptr[2])();
 		case 3:
 			(this->*func_ptr[3])();
-			break;
+		break;
 		default:
 			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
 			break;
