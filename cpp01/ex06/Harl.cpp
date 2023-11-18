@@ -32,12 +32,25 @@ void	Harl::error( void )
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void	Harl::complain ( std::string level )
+void	Harl::complainFilter ( std::string level )
 {
-	for (int i = 0; i < 4; i++){
-		if (level.compare((this->_level)[i]) == 0){
-			(this->*func_ptr[i])();
+	int	mode;
+
+	for (mode = 0; mode < 4; mode++){
+		if (level.compare(this->_level[mode]) == 0)
 			break;
-		}
+	}
+
+	switch (mode){
+		case 0:
+			(this->*func_ptr[0])();
+		case 1:
+			(this->*func_ptr[1])();
+		case 2:
+			(this->*func_ptr[2])();
+		case 3:
+			(this->*func_ptr[3])();
+		default:
+			std::cerr << "Error" << std::endl;
 	}
 }
