@@ -1,4 +1,4 @@
-NAME	= exe
+NAME	= a.out
 
 CC		= c++
 RM		= rm -f

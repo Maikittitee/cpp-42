@@ -9,7 +9,7 @@ HumanB::~HumanB(void) {}
 
 void	HumanB::attack(void)
 {
-	std::cout << this->_name << " attack by" << this->_weapon->getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon &weapon)

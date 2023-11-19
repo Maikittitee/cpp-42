@@ -60,10 +60,9 @@ int main( int ac, char **argv)
 {
 	std::string buff;
 
-	readFile(buff , argv[1]);
-	std::cout << buff << std::endl;
 	if (ac != 4)
 		return (1);
+	readFile(buff , argv[1]);
 	writeFile(buff, argv[1], argv[2], argv[3]);
 
 	return 0;
