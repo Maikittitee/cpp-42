@@ -59,6 +59,5 @@ void	Harl::complainFilter ( std::string level )
 		break;
 		default:
 			std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
-			break;
 	}
 }
