@@ -67,32 +67,39 @@ std::ostream& operator << (std::ostream& os, const Fixed& fp)
 }
 
 bool	Fixed::operator >(Fixed const &fp)
+
 {
 	// if (this->_raw_bits > fp.getRawBits())
 	// 	return (true);
 	// return (false);
 	return (this->_raw_bits > fp.getRawBits() ? true : false);
 }
+
 bool	Fixed::operator < (Fixed const &fp)
 {
 	return (this->_raw_bits < fp.getRawBits() ? true : false);
 }
+
 bool	Fixed::operator >= (Fixed const &fp)
 {
 	return (this->_raw_bits >= fp.getRawBits() ? true : false);
 }
+
 bool	Fixed::operator <= (Fixed const &fp)
 {
 	return (this->_raw_bits <= fp.getRawBits() ? true : false);
 }
+
 bool	Fixed::operator == (Fixed const &fp)
 {
 	return (this->_raw_bits == fp.getRawBits() ? true : false);
 }
+
 bool	Fixed::operator != (Fixed const &fp)
 {
 	return (this->_raw_bits != fp.getRawBits() ? true : false);
 }
+
 Fixed	Fixed::operator + (Fixed const &fp) const
 {
 	Fixed ret;
@@ -100,6 +107,7 @@ Fixed	Fixed::operator + (Fixed const &fp) const
 	ret.setRawBits(this->_raw_bits + fp.getRawBits());
 	return (ret);
 }
+
 Fixed	Fixed::operator - (Fixed const &fp) const
 {
 	Fixed ret;
@@ -108,6 +116,7 @@ Fixed	Fixed::operator - (Fixed const &fp) const
 	return (ret);
 
 }
+
 Fixed	Fixed::operator * (Fixed const &fp) const 
 {
 	Fixed ret;
@@ -116,6 +125,7 @@ Fixed	Fixed::operator * (Fixed const &fp) const
 	return (ret);
 
 }
+
 Fixed	Fixed::operator / (Fixed const &fp) const
 {
 	Fixed ret(float(this->_raw_bits) / fp.getRawBits());
@@ -128,38 +138,32 @@ Fixed&	Fixed::operator ++ ( void )
 	// ++i
 	*this = *this + 1;
 	return (*this);
-
-
-	
-
 }
+
 Fixed	Fixed::operator ++ ( int )
 {
 	// i++
-
 	Fixed tmp = *this;
 	*this = *this + 1;
 	return (tmp);
-
-
 }
+
 Fixed&	Fixed::operator -- ( void )
 {
 	// --i
 	*this = *this - 1;
 	return (*this);
-
-
-
 }
+
 Fixed	Fixed::operator -- ( int )
 {
 	// i--
-
 	Fixed tmp = *this;
 	*this = *this - 1;
 	return (tmp);
-	
 }
 
-
+static Fixed&	min(Fixed &a, Fixed &b);
+static Fixed&	min(Fixed const &a, Fixed const &b);
+static Fixed&	max(Fixed &a, Fixed &b);
+static Fixed&	max(Fixed const &a, Fixed const &b);
