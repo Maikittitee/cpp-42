@@ -163,7 +163,25 @@ Fixed	Fixed::operator -- ( int )
 	return (tmp);
 }
 
-static Fixed&	min(Fixed &a, Fixed &b);
-static Fixed&	min(Fixed const &a, Fixed const &b);
-static Fixed&	max(Fixed &a, Fixed &b);
-static Fixed&	max(Fixed const &a, Fixed const &b);
+Fixed&	Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a < b ? a : b);
+
+}
+
+Fixed const&	Fixed::min(Fixed const &a, Fixed const &b)
+{
+	return (a.getRawBits() < b.getRawBits() ? a : b);
+
+}
+
+Fixed&	Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a > b ? a : b);
+
+}
+
+Fixed const& 	Fixed::max(Fixed const &a, Fixed const &b)
+{
+	return (a.getRawBits() > b.getRawBits() ? a : b);
+}
