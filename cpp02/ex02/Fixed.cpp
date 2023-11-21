@@ -25,7 +25,6 @@ Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-
 // Oparator 
 
 Fixed & Fixed::operator = (const Fixed &fp)
@@ -35,7 +34,6 @@ Fixed & Fixed::operator = (const Fixed &fp)
 	return (*this); 
 
 }
-
 
 // Member Function
 
@@ -62,9 +60,66 @@ float	Fixed::toFloat( void ) const
 	return (float(this->_raw_bits) / (1 << this->_op_bits));
 }
 
-
-std::ostream& operator<<(std::ostream& os, const Fixed& fp) 
+std::ostream& operator << (std::ostream& os, const Fixed& fp) 
 {
     os << (float)fp.toFloat();
     return os;
+}
+
+bool	Fixed::operator >(Fixed const &fp)
+{
+	// if (this->_raw_bits > fp.getRawBits())
+	// 	return (true);
+	// return (false);
+	return (this->_raw_bits > fp.getRawBits() ? true : false);
+}
+bool	Fixed::operator < (Fixed const &fp)
+{
+	return (this->_raw_bits < fp.getRawBits() ? true : false);
+}
+bool	Fixed::operator >= (Fixed const &fp)
+{
+	return (this->_raw_bits >= fp.getRawBits() ? true : false);
+}
+bool	Fixed::operator <= (Fixed const &fp)
+{
+	return (this->_raw_bits <= fp.getRawBits() ? true : false);
+}
+bool	Fixed::operator == (Fixed const &fp)
+{
+	return (this->_raw_bits == fp.getRawBits() ? true : false);
+}
+bool	Fixed::operator != (Fixed const &fp)
+{
+	return (this->_raw_bits != fp.getRawBits() ? true : false);
+}
+
+Fixed	Fixed::operator + (Fixed const &fp) const
+{
+	Fixed ret;
+
+	ret.setRawBits(this->_raw_bits + fp.getRawBits());
+	return (ret);
+}
+Fixed	Fixed::operator - (Fixed const &fp) const
+{
+	Fixed ret;
+
+	ret.setRawBits(this->_raw_bits - fp.getRawBits());
+	return (ret);
+
+}
+Fixed	Fixed::operator * (Fixed const &fp) const 
+{
+	Fixed ret;
+
+	ret.setRawBits((this->_raw_bits * fp.getRawBits()) >> _op_bits);
+	return (ret);
+
+}
+Fixed	Fixed::operator / (Fixed const &fp) const
+{
+	Fixed ret(float(this->_raw_bits) / fp.getRawBits());
+	return (ret);
+
 }
