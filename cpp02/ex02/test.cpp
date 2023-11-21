@@ -102,7 +102,45 @@ int	main()
 	else
 		std::cout << "false" << std::endl;
 
+	// test calculation
 
-	// test 
+	std::cout << n1 << "+" << n3 << " = " <<  n1 + n3 << std::endl;
+	std::cout << n1 << "-" << n3 << " = " << n1 - n3 << std::endl;
+	std::cout << n3 << "-" << n1 << " = " << n3 - n1 << std::endl;
+	std::cout << n1 << "*" << n3 << " = " << n1 * n3 << std::endl;
+	std::cout << n1 << "/" << n3 << " = " << n1 / n3 << std::endl;
+	
+	std::cout << f1 << "+" << f3 << " = " << f1 + f3 << std::endl;
+	std::cout << f1 << "-" << f3 << " = " << f1 - f3 << std::endl;
+	std::cout << f3 << "-" << f1 << " = " << f3 - f1 << std::endl;
+	std::cout << f1 << "*" << f3 << " = " << f1 * f3 << std::endl;
+	std::cout << f1 << "/" << f3 << " = " << f1 / f3 << std::endl;
+
+	// test increment / decrement 
+
+	Fixed i(1);
+	std::cout << "i=" << i << " i++ = " << i++ << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " i++ = " << i++ << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " i++ = " << i++ << " and now is " << i << std::endl;
+
+	
+	std::cout << "i=" << i << " ++i = " << ++i << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " ++i = " << ++i << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " ++i = " << ++i << " and now is " << i << std::endl;
+
+	i = Fixed(11);
+
+	std::cout << "i=" << i << " i-- = " << i-- << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " i-- = " << i-- << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " i-- = " << i-- << " and now is " << i << std::endl;
+
+	
+	std::cout << "i=" << i << " --i = " << --i << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " --i = " << --i << " and now is " << i << std::endl;
+	std::cout << "i=" << i << " --i = " << --i << " and now is " << i << std::endl;
+
+
+
+
 
 }

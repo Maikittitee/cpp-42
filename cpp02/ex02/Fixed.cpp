@@ -4,13 +4,13 @@
 
 Fixed::Fixed() :_raw_bits(0) 
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 }
 
 
 Fixed::Fixed(const Fixed &fp)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	// *this = fp; // is it the same address ? it shouldn't be
 	
 	// alternative
@@ -22,14 +22,14 @@ Fixed::Fixed(const int n): _raw_bits(n << _op_bits) {}
 Fixed::Fixed(const float n): _raw_bits(roundf(n * (1 << this->_op_bits))) {}
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 // Oparator 
 
 Fixed & Fixed::operator = (const Fixed &fp)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	this->_raw_bits = fp.getRawBits();
 	return (*this); 
 
@@ -40,7 +40,7 @@ Fixed & Fixed::operator = (const Fixed &fp)
 int	Fixed::getRawBits() const
 {
 	
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->_raw_bits);
 }
 
@@ -93,7 +93,6 @@ bool	Fixed::operator != (Fixed const &fp)
 {
 	return (this->_raw_bits != fp.getRawBits() ? true : false);
 }
-
 Fixed	Fixed::operator + (Fixed const &fp) const
 {
 	Fixed ret;
@@ -123,3 +122,44 @@ Fixed	Fixed::operator / (Fixed const &fp) const
 	return (ret);
 
 }
+
+Fixed&	Fixed::operator ++ ( void )
+{
+	// ++i
+	*this = *this + 1;
+	return (*this);
+
+
+	
+
+}
+Fixed	Fixed::operator ++ ( int )
+{
+	// i++
+
+	Fixed tmp = *this;
+	*this = *this + 1;
+	return (tmp);
+
+
+}
+Fixed&	Fixed::operator -- ( void )
+{
+	// --i
+	*this = *this - 1;
+	return (*this);
+
+
+
+}
+Fixed	Fixed::operator -- ( int )
+{
+	// i--
+
+	Fixed tmp = *this;
+	*this = *this - 1;
+	return (tmp);
+	
+}
+
+
