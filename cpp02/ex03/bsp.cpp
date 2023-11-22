@@ -25,17 +25,30 @@ Fixed getArea(Point const &a, Point const &b, Point const &c)
 	return (ft_abs(e1 + e2 + e3) / 2);
 }
 
+bool isVertex(  Point const a, Point const b, Point const c, Point const point )
+{
+	if (a.getX() == point.getX() and a.getY() == point.getY())
+		return (true);
+	if (b.getX() == point.getX() and b.getY() == point.getY())
+		return (true);
+	if (c.getX() == point.getX() and c.getY() == point.getY())
+		return (true);
+	return (false);
+}
+
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	// std::cout << "Area is " << getarea(a, b, c) << std::endl;float
-
+	if (isVertex(a, b, c, point))
+		return (false);
+	
+	Fixed ABC = getArea(a,b,c);
 	Fixed A = getArea(point, b, c);
 	Fixed B = getArea(point, a, c);
 	Fixed C = getArea(point, a, b);
-	Fixed ABC = getArea(a,b,c);
 
-	std::cout << ABC << " " << A << " " << B << " " << C << std::endl;
-	if ( ABC == A + B + C )
+	// std::cout << ABC << " " << A << " " << B << " " << C << std::endl;
+	if ( ((ABC == A + B + C)) && A != 0 && B != 0 && C != 0 )
 		return (true);
 	return (false);	
 

@@ -136,7 +136,7 @@ Fixed	Fixed::operator / (Fixed const &fp) const
 Fixed&	Fixed::operator ++ ( void )
 {
 	// ++i
-	*this = *this + 1;
+	++this->_raw_bits;
 	return (*this);
 }
 
@@ -144,14 +144,14 @@ Fixed	Fixed::operator ++ ( int )
 {
 	// i++
 	Fixed tmp = *this;
-	*this = *this + 1;
+	++this->_raw_bits;
 	return (tmp);
 }
 
 Fixed&	Fixed::operator -- ( void )
 {
 	// --i
-	*this = *this - 1;
+	--this->_raw_bits;
 	return (*this);
 }
 
@@ -159,7 +159,7 @@ Fixed	Fixed::operator -- ( int )
 {
 	// i--
 	Fixed tmp = *this;
-	*this = *this - 1;
+	--this->_raw_bits;
 	return (tmp);
 }
 

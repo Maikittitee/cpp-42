@@ -17,7 +17,6 @@ class Point{
 		// Assign overloading
 		Point & operator = (const Point &pnt);
 
-
 		// getter
 		Fixed	getX(void) const ;
 		Fixed	getY(void) const ;

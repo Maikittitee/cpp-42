@@ -11,15 +11,15 @@ Fixed::Fixed() :_raw_bits(0)
 Fixed::Fixed(const Fixed &fp)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	// *this = fp; // is it the same address ? it shouldn't be
+	*this = fp; // is it the same address ? it shouldn't be
 	
 	// alternative
-	this->_raw_bits = fp.getRawBits();
+	// this->_raw_bits = fp.getRawBits();
 }
 
-Fixed::Fixed(const int n): _raw_bits(n << _op_bits) {}
+Fixed::Fixed(const int n): _raw_bits(n << _op_bits) {std::cout << "Int constructor called" << std::endl;}
 
-Fixed::Fixed(const float n): _raw_bits(roundf(n * (1 << this->_op_bits))) {}
+Fixed::Fixed(const float n): _raw_bits(roundf(n * (1 << this->_op_bits))) {std::cout << "Float constructor called" << std::endl;}
 
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
@@ -31,7 +31,8 @@ Fixed::~Fixed() {
 Fixed & Fixed::operator = (const Fixed &fp)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_raw_bits = fp.getRawBits();
+	this->_raw_bits = fp._raw_bits;
+	// *this = fp;
 	return (*this); 
 
 }

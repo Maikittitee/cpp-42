@@ -8,10 +8,10 @@ int main( void ) {
 	Fixed const d( b );
 	a = Fixed( 1234.4321f );
 
-	std::cout << "bit a is " << a.getRawBits() << std::endl;
-	std::cout << "bit b is " << b.getRawBits() << std::endl;
-	std::cout << "bit c is " << c.getRawBits() << std::endl;
-	std::cout << "bit d is " << d.getRawBits() << std::endl;
+	// std::cout << "bit a is " << a.getRawBits() << std::endl;
+	// std::cout << "bit b is " << b.getRawBits() << std::endl;
+	// std::cout << "bit c is " << c.getRawBits() << std::endl;
+	// std::cout << "bit d is " << d.getRawBits() << std::endl;
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
