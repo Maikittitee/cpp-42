@@ -139,8 +139,15 @@ int	main()
 	std::cout << "i=" << i << " --i = " << --i << " and now is " << i << std::endl;
 	std::cout << "i=" << i << " --i = " << --i << " and now is " << i << std::endl;
 
+	// max min
 
+	std::cout << "max of " << n1 << " and " << n3 << " is "  << Fixed::max(n1, n3) << std::endl;
+	std::cout << "max of " << f1 << " and " << f3 << " is "  << Fixed::max(f1, f3) << std::endl;
+	std::cout << "max of " << n1 << " and " << f3 << " is "  << Fixed::max(n1, f3) << std::endl;
 
+	std::cout << "min of " << n1 << " and " << n3 << " is "  << Fixed::min(n1, n3) << std::endl;
+	std::cout << "min of " << f1 << " and " << f3 << " is "  << Fixed::min(f1, f3) << std::endl;
+	std::cout << "min of " << n1 << " and " << f3 << " is "  << Fixed::min(n1, f3) << std::endl;
 
 
 }
