@@ -4,14 +4,14 @@ CC		= c++
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= test.cpp Fixed.cpp
+SRCS	= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
-HEADER	= Fixed.hpp
+HEADER	= Fixed.hpp Point.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $@ -L. -l$(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
