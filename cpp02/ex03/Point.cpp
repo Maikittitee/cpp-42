@@ -22,7 +22,7 @@ Fixed Point::getX(void) const
 
 Fixed Point::getY(void) const
 {
-	return (this->_x);
+	return (this->_y);
 }
 
 
