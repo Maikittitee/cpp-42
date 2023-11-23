@@ -4,13 +4,13 @@ CC		= c++
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= main.cpp
+SRCS	= main.cpp ClapTrap.cpp
 
-HEADER	= 
+HEADER	= ClapTrap.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-%.o:%.c
+%.o:%.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
