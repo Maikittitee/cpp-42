@@ -15,7 +15,7 @@ ClapTrap::ClapTrap( const ClapTrap &other): _name(other._name), _hp(other._hp), 
 	std::cout << "CrapTrap Copy Constructor called" << std::endl;
 }
 
-ClapTrap&	ClapTrap::operator = (const ClapTrap &ct)
+ClapTrap&	ClapTrap::operator=(const ClapTrap &ct)
 {
 	*this = ct;
 	return (*this);
