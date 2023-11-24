@@ -23,9 +23,9 @@ class ClapTrap{
 		void setName(std::string name);
 	private:
 		std::string _name;
-		int	_hit_point;
-		int	_enegy_point;
-		int	_attack_damage;
+		int	_hp;
+		int	_ep;
+		int	_ad;
 
 
 };
