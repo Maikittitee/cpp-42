@@ -39,10 +39,18 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 void	ScavTrap::attack(const std::string& target)
 {
 	// pass
+	if (this->_ep <= 0 || this->_hp <= 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " not able to attack anymore." << std::endl;
+		return ;
+	}
+	this->_ep--;
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << " , causing " << this->_ad << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
+	std::cout << " ScavTrap is now in Gate keeper mode." << std::endl;
 	// pass
 
 }
