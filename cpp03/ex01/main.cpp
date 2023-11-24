@@ -3,8 +3,15 @@
 
 int	main()
 {
-	ScavTrap t;
+	ClapTrap a("Mai");
+	ScavTrap b("Mavis");
 
-	// t.attack("who?")
-	
+	a.attack("John doe");
+	b.attack("John doe");
+
+	b.takeDamage(99);
+	a.printStatus();
+	b.printStatus();
+
+
 }
