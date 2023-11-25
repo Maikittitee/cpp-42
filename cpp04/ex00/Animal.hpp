@@ -7,16 +7,17 @@
 class Animal{
 	public:
 		Animal(void);
+		Animal(std:string type);
 		Animal(const Animal &other);
 		
 		~Animal(void);
 		Animal& operator=(const Animal &other);
 
 		// getter / setter
-		void	setType();
+		void	setType(std::string type);
 
 		// member function
-		void	makeSound();
+		void	makeSound(void);
 		
 
 	protected:
