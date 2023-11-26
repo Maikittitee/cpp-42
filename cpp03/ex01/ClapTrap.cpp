@@ -5,11 +5,6 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap( void ): _name("John doe"), _hp(10), _ep(10), _ad(0)
-{
-	std::cout << "CrapTrap Default Constructor called" << std::endl;
-}
-
 ClapTrap::ClapTrap ( std::string name ): _name(name), _hp(10), _ep(10), _ad(0)
 {
 	std::cout << "CrapTrap string Constructor called" << std::endl;

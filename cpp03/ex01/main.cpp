@@ -12,6 +12,6 @@ int	main()
 	b.takeDamage(99);
 	a.printStatus();
 	b.printStatus();
-
+	b.guardGate();
 
 }
