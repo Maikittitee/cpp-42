@@ -28,7 +28,11 @@ void	Animal::setType(std::string type){
 	this->__type = type;
 }
 
-void	Animal::makeSound(void){
+std::string	Animal::getType(void) const {
+	return (this->__type);
+}
+
+void	Animal::makeSound(void) const {
 	std::cout << "Animal makeSound() method called" << std::endl;
 
 }

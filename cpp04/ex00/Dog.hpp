@@ -14,7 +14,7 @@ class Dog : public Animal
 		~Dog(void);
 		Dog& operator=(const Dog &other);
 
-		void makeSound(void);
+		void makeSound(void) const ;
 
 	protected:
 		std::string __type;

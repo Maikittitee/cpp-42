@@ -10,14 +10,15 @@ class Animal{
 		Animal(std::string type);
 		Animal(const Animal &other);
 		
-		~Animal(void);
+		virtual	~Animal(void);
 		Animal& operator=(const Animal &other);
 
 		// getter / setter
 		void	setType(std::string type);
+		std::string getType(void) const ;
 
 		// member function
-		void	makeSound(void);
+		virtual void	makeSound(void) const;
 		
 
 	protected:
