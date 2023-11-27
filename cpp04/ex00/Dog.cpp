@@ -1,28 +1,28 @@
 
 #include "Dog.hpp"
 
-Cat::Cat(void) : Animal("Dog")
+Dog::Dog(void) : Animal("Dog")
 {
 	std::cout << "Dog Default Constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other): Animal(other)
+Dog::Dog(const Dog &other): Animal(other)
 {
 	std::cout << "Dog Copy Constructor called" << std::endl;
 }
 
-Cat::~Cat(void)
+Dog::~Dog(void)
 {
 	std::cout << "Dog Destructor called" << std::endl;
 }
 
-Cat& Cat::operator=(const Cat &other)
+Dog& Dog::operator=(const Dog &other)
 {
 	this->__type = "Dog";
 	return (*this);
 }
 
-void	Cat::makeSound(void)
+void	Dog::makeSound(void)
 {
 	std::cout << "WOOFๆๆๆๆๆๆๆ" << std::endl;
 }

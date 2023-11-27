@@ -7,7 +7,7 @@
 class Animal{
 	public:
 		Animal(void);
-		Animal(std:string type);
+		Animal(std::string type);
 		Animal(const Animal &other);
 		
 		~Animal(void);
@@ -22,6 +22,6 @@ class Animal{
 
 	protected:
 		std::string __type;
-}
+};
 
 #endif

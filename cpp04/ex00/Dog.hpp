@@ -5,17 +5,19 @@
 # include <iostream>
 # include <string>
 
-class Cat : public Animal
+class Dog : public Animal
 {
 	public:
-		Cat(void);
-		Cat(const Cat &other);
+		Dog(void);
+		Dog(const Dog &other);
 		
-		~Cat(void);
-		Cat& operator=(const Cat &other);
+		~Dog(void);
+		Dog& operator=(const Dog &other);
+
+		void makeSound(void);
 
 	protected:
 		std::string __type;
-}
+};
 
 #endif

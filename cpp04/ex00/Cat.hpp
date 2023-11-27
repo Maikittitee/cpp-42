@@ -14,8 +14,10 @@ class Cat : public Animal
 		~Cat(void);
 		Cat& operator=(const Cat &other);
 
+		void makeSound(void);
+
 	protected:
 		std::string __type;
-}
+};
 
 #endif
