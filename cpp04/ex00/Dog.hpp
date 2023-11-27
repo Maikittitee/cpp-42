@@ -9,7 +9,6 @@ class Dog : public Animal
 {
 	public:
 		Dog(void);
-		Dog(std:string type);
 		Dog(const Animal &other);
 		
 		~Dog(void);
