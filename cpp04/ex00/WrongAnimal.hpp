@@ -1,17 +1,17 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
-class Animal{
+class WrongAnimal{
 	public:
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &other);
+		WrongAnimal(void);
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &other);
 		
-		virtual	~Animal(void);
-		Animal& operator=(const Animal &other);
+		~WrongAnimal(void);
+		WrongAnimal& operator=(const WrongAnimal &other);
 
 		// getter / setter
 		void	setType(std::string type);

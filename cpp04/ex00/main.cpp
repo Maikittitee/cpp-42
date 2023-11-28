@@ -1,6 +1,8 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -16,6 +18,47 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+
+	std::cout << "Testing for WrongAnimal" << std::endl;
+	const WrongAnimal* wc = new WrongCat();
+	wc->makeSound();
+
+	delete wc;
+
+	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << "Testing for normal used and Easy to explain" << std::endl;
+
+	const Animal* cat1 = new Cat();
+	const Animal* dog1 = new Dog();
+	const WrongAnimal* cat2 = new WrongCat();
+
+	cat1->makeSound();
+	dog1->makeSound();
+	cat2->makeSound();
+
+	delete cat1;
+	delete dog1;
+	delete cat2;
+
+	std::cout << "-------------------------------------------" << std::endl;
+	std::cout << "Testing for multiple type of animal in only 1 array" << std::endl;
+
+	const Animal *acat = new Cat();
+	const Animal *adog = new Dog();
+
+	const Animal *animal[2];
+
+	animal[0] = acat;
+	animal[1] = adog;
+
+	animal[0]->makeSound();
+	animal[1]->makeSound();
+
+
+
+	delete acat;
+	delete adog;
+	
 
 	return 0;
 }

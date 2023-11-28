@@ -1,39 +1,40 @@
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(void): __type("None") {
-	std::cout << "Animal Default Constructor called" << std::endl;
+WrongAnimal::WrongAnimal(void): __type("None") {
+	std::cout << "WrongAnimal Default Constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type): __type(type) {
-	std::cout << "Animal String Constructor called" << std::endl;
+WrongAnimal::WrongAnimal(std::string type): __type(type) {
+	std::cout << "WrongAnimal String Constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &other) {
+WrongAnimal::WrongAnimal(const WrongAnimal &other) {
 	*this = other;
-	std::cout << "Animal Copy Constructor called" << std::endl;
+	std::cout << "WrongAnimal Copy Constructor called" << std::endl;
 }
 
-Animal::~Animal(void) {
-	std::cout << "Animal Destructor called" << std::endl;
+WrongAnimal::~WrongAnimal(void) {
+	std::cout << "WrongAnimal Destructor called" << std::endl;
 }
 
-Animal&	Animal::operator=(const Animal &other){
-	std::cout << "Animal Assigned Operator called" << std::endl;
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal &other){
+	std::cout << "WrongAnimal Assigned Operator called" << std::endl;
 	this->__type = other.__type;
 	return (*this);
 }
 
-void	Animal::setType(std::string type){
-	std::cout << "Animal setType() method called" << std::endl;
+void	WrongAnimal::setType(std::string type){
+	std::cout << "WrongAnimal setType() method called" << std::endl;
 	this->__type = type;
 }
 
-std::string	Animal::getType(void) const {
+std::string	WrongAnimal::getType(void) const {
+	std::cout << "WrongAnimal getType() method called" << std::endl;
 	return (this->__type);
 }
 
-void	Animal::makeSound(void) const {
-	std::cout << "Animal makeSound() method called" << std::endl;
+void	WrongAnimal::makeSound(void) const {
+	std::cout << "WrongAnimal makeSound() method called" << std::endl;
 
 }
 
