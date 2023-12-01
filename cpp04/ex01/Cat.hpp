@@ -13,7 +13,7 @@ class Cat : public Animal
 		Cat(const Cat &other);
 		
 		~Cat(void);
-		Cat& operator=(const Cat &other);
+		Cat& operator=(const Cat &rhs);
 
 		void makeSound(void) const;
 
@@ -21,7 +21,7 @@ class Cat : public Animal
 		std::string __type;
 
 	private:
-		Brain _brain;
+		Brain *_brain;
 
 };
 
