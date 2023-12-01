@@ -21,14 +21,19 @@ Dog::~Dog(void)
 	delete this->_brain;
 }
 
-Dog& Dog::operator=(const Dog &other)
+Dog& Dog::operator=(const Dog &rhs)
 {
-	this->__type = other.__type;
-	this->_brain = other._brain;
+	if (this != &rhs)
+	{
+		delete this->_brain;
+		Animal::operator=(rhs);
+		this->_brain = new Brain();
+		*this->_brain = *rhs._brain;
+	}
 	return (*this);
 }
 
 void	Dog::makeSound(void) const
 {
-	std::cout << "WOOFๆๆๆๆๆๆๆ" << std::endl;
+	std::cout << "Bok Bok (❍ᴥ❍ʋ)" << std::endl;
 }

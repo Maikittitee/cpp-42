@@ -13,7 +13,7 @@ class Dog : public Animal
 		Dog(const Dog &other);
 		
 		~Dog(void);
-		Dog& operator=(const Dog &other);
+		Dog& operator=(const Dog &rhs);
 
 		void makeSound(void) const ;
 

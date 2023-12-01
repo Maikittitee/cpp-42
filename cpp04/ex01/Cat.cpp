@@ -11,7 +11,6 @@ Cat::Cat(const Cat &other): Animal(other)
 {
 	std::cout << "Cat Copy Constructor called" << std::endl;
 	this->_brain = new Brain();
-
 	*this->_brain = *other._brain;
 }
 
@@ -35,5 +34,5 @@ Cat& Cat::operator=(const Cat &rhs)
 
 void	Cat::makeSound(void) const
 {
-	std::cout << "Meawwwww <3" << std::endl;
+	std::cout << "Meawwwww <3 ≽^•⩊•^≼" << std::endl;
 }

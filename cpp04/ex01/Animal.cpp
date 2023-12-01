@@ -9,8 +9,8 @@ Animal::Animal(std::string type): __type(type) {
 }
 
 Animal::Animal(const Animal &other) {
-	*this = other;
 	std::cout << "Animal Copy Constructor called" << std::endl;
+	this->__type = other.__type;
 }
 
 Animal::~Animal(void) {
