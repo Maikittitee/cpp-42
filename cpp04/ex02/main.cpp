@@ -7,9 +7,15 @@ int	main()
 {
 	Cat cat1;
 	Dog dog1;
-	AbAnimal animal;
+	// AbAnimal animal;
 
 	cat1.makeSound();
 	dog1.makeSound();
+
+	AbAnimal *eiei = new Cat;
+
+	eiei->makeSound();
+
+	delete eiei;
 	
 }

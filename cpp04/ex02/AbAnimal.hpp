@@ -10,7 +10,7 @@ class AbAnimal{
 		AbAnimal(std::string type);
 		AbAnimal(const AbAnimal &other);
 		
-		~AbAnimal(void);
+		virtual ~AbAnimal(void);
 		AbAnimal& operator=(const AbAnimal &other);
 
 		// getter / setter
