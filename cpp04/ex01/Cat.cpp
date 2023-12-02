@@ -29,7 +29,7 @@ Cat& Cat::operator=(const Cat &rhs)
 		this->_brain = new Brain();
 		*this->_brain = *rhs._brain;
 	}
-	return *this;
+	return (*this);
 }
 
 void	Cat::makeSound(void) const
