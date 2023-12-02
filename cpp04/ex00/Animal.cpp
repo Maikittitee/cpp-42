@@ -8,8 +8,7 @@ Animal::Animal(std::string type): __type(type) {
 	std::cout << "Animal String Constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &other) {
-	*this = other;
+Animal::Animal(const Animal &other): __type(other.__type){
 	std::cout << "Animal Copy Constructor called" << std::endl;
 }
 
@@ -19,7 +18,8 @@ Animal::~Animal(void) {
 
 Animal&	Animal::operator=(const Animal &other){
 	std::cout << "Animal Assigned Operator called" << std::endl;
-	this->__type = other.__type;
+	if (this != &other)
+		this->__type = other.__type;
 	return (*this);
 }
 

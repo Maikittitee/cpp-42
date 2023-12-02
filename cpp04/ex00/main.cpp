@@ -62,3 +62,14 @@ int main()
 
 	return 0;
 }
+
+
+// int	main()
+// {
+// 	Dog cat1;
+// 	Dog cat_clone;
+
+// 	cat_clone  = cat_clone;
+
+// 	cat_clone.makeSound();
+// }

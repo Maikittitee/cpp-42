@@ -27,10 +27,10 @@
 int	main()
 {
 	Cat mew;
-	Cat muay;
+	// Cat muay;
 
 	Cat mew_clone(mew);
-	Cat muay_clone = muay;
+	// Cat muay_clone = muay;
 
 
 

@@ -9,7 +9,6 @@ Dog::Dog(void) : Animal("Dog")
 
 Dog::Dog(const Dog &other): Animal(other)
 {
-	delete this->_brain;
 	std::cout << "Dog Copy Constructor called" << std::endl;
 	this->_brain = new Brain();
 	this->_brain = other._brain;

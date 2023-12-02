@@ -12,13 +12,13 @@ Brain::Brain(const Brain &other){
 }
 
 Brain& Brain::operator= (const Brain &rhs){
-	// std::cout < "[Brain] Copy Assignment called" << std::endl;
+	// std::cout << "[Brain] Copy Assignment called" << std::endl;
 	if (this != &rhs)
 	{
 		for (int i = 0; i < 100; i++)
 			this->_ideas[i] = rhs._ideas[i];
 	}
-	return *this;
+	return (*this);
 }
 
 Brain::~Brain( void ){
