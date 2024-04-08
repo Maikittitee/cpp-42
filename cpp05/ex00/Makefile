@@ -4,9 +4,9 @@ CC		= c++
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS	= main.cpp Bureaucrat.cpp
 
-HEADER	= Cat.hpp Dog.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp
+HEADER	= Bureaucrat.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
