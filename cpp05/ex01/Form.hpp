@@ -3,6 +3,7 @@
 
 #   include <iostream>
 #   include <string>
+#   include "Bureaucrat.hpp"
 
 class Form{
 	private:
@@ -17,8 +18,18 @@ class Form{
 		~Form();
 		Form operator=(const Form &rhs);
 
-		ope
+		class GradeTooHighException : public std::exception{
+			const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception{
+			const char* what() const throw();
+		};
 
-}
+		void	beSigned(Bureaucrat &bureaucrat);
+
+
+		std::string	getName( void );
+
+};
 
 #endif
