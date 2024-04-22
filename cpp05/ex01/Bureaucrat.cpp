@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(0) {}
 
-Bureaucrat::Bureaucrat(const std::string name) : _name(name), _grade(0) {}
+Bureaucrat::Bureaucrat(const std::string name, const int grade) : _name(name), _grade(grade) {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {}
 

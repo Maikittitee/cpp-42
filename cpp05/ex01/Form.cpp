@@ -11,6 +11,7 @@ Form::Form(const Form &other) : _name(other._name), _is_sign(other._is_sign), _s
 }
 
 Form::~Form(){
+	std::cout << "Form Destructor Called" << std::endl;
 }
 
 Form Form::operator=(const Form &rhs){
