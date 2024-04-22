@@ -18,6 +18,8 @@ class Bureaucrat{
 		Bureaucrat(const std::string name, const int grade);
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat operator= (const Bureaucrat &rhs);
+
+		// getter
 		int get_grade( void );
 		const std::string get_name( void );
 

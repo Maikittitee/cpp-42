@@ -32,9 +32,6 @@ void AForm::beSigned(Bureaucrat &bureaucrat){
 		this->_is_sign = true;
 }
 
-std::string AForm::getName( void ){
-	return _name;
-}
 
 const char* AForm::GradeTooHighException::what() const throw(){
 	return "Grade is too high";
@@ -43,4 +40,10 @@ const char* AForm::GradeTooHighException::what() const throw(){
 const char* AForm::GradeTooLowException::what() const throw(){
 	return "Grade is too low";
 }
+
+std::string	AForm::get_name( void ) {return _name;}
+
+int	AForm::get_sign_grade( void ) {return _sign_grade;}
+
+int AForm::get_exec_grade( void ) {return (_exec_grade);}
 

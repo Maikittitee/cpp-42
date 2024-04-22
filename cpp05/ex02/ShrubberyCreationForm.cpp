@@ -41,7 +41,7 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 
 std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "[shrubeberry]" << i.get_target() << "sign required:" << i.get_sign_grade() << " exe req:" << i.get_exec_grade() << std::endl;
 	return o;
 }
 
@@ -54,6 +54,6 @@ std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
+std::string ShrubberyCreationForm::get_target(void){ return _target;}
 
 /* ************************************************************************** */
