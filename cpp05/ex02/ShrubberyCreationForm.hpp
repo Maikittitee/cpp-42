@@ -23,6 +23,12 @@ class ShrubberyCreationForm: public AForm
 		// method 
 		void execute(Bureaucrat const& executor) const;
 
+		class CannotOpenfile: public std::exception{
+			public:
+				const char * what() const throw();
+
+		};
+
 	private:
 		std::string _target;
 
