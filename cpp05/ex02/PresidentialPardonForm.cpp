@@ -41,7 +41,7 @@ PresidentialPardonForm &				PresidentialPardonForm::operator=( PresidentialPardo
 
 std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i )
 {
-	o << "[Presidential]" << i.get_target() << "sign required:" << i.get_sign_grade() << " exe req:" << i.get_exec_grade() << std::endl;
+	o << "[Presidential]" << "(" << i.get_is_sign() << ")" << i.get_target() << "sign required:" << i.get_sign_grade() << " exe req:" << i.get_exec_grade() << std::endl;
 	return o;
 }
 
@@ -49,7 +49,7 @@ std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-void PresidentialPardonForm::execute(Bureaucrat const & executor){
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	if (!this->get_is_sign())
 		throw AForm::IsNotSignException();
 	if (executor.get_grade() > this->get_exec_grade())

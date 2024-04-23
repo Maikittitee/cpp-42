@@ -41,7 +41,7 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 
 std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
 {
-	o << "[shrubeberry]" << i.get_target() << "sign required:" << i.get_sign_grade() << " exe req:" << i.get_exec_grade() << std::endl;
+	o << "[shrubeberry]" << "(" << i.get_is_sign() << ")" << i.get_target() << "sign required:" << i.get_sign_grade() << " exe req:" << i.get_exec_grade() << std::endl;
 	return o;
 }
 
