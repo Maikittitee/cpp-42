@@ -26,8 +26,7 @@ AForm& AForm::operator=(const AForm &rhs){
 
 void AForm::beSigned(Bureaucrat &bureaucrat){
 	if (bureaucrat.get_grade() > this->_sign_grade)
-		throw AForm
-	::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	else
 		this->_is_sign = true;
 }
