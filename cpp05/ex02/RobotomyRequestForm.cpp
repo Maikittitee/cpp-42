@@ -49,7 +49,15 @@ std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
+void RobotomyRequestForm::execute(Bureaucrat const & executor){
+	if (!this->get_is_sign())
+		throw AForm::IsNotSignException();
+	if (executor.get_grade() > this->get_exec_grade())
+		throw AForm::GradeTooLowException();
+	
+	std::cout << "dezzz dezzz (some drilling noise)" << std::endl;
+	std::cout << this->_target << " has beem robotomaized succesfully 50% of the time" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

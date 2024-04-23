@@ -49,7 +49,14 @@ std::ostream &			operator<<( std::ostream & o, PresidentialPardonForm const & i 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
+void PresidentialPardonForm::execute(Bureaucrat const & executor){
+	if (!this->get_is_sign())
+		throw AForm::IsNotSignException();
+	if (executor.get_grade() > this->get_exec_grade())
+		throw AForm::GradeTooLowException();
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+	
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
