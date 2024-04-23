@@ -31,8 +31,14 @@ class Form{
 		void	beSigned(Bureaucrat &bureaucrat);
 
 
-		std::string	getName( void );
+		const std::string	get_name( void ) const;
+		const int		get_sign_grade( void ) const;
+		const int get_exec_grade( void ) const;
+		const bool get_is_sign( void ) const;
+
 
 };
+
+std::ostream & operator<< (std::ostream &o, Form const & i);
 
 #endif

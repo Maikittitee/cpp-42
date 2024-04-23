@@ -28,9 +28,13 @@ void Form::beSigned(Bureaucrat &bureaucrat){
 		this->_is_sign = true;
 }
 
-std::string Form::getName( void ){
-	return _name;
-}
+const std::string	Form::get_name( void ) const {return _name;}
+
+const int	Form::get_sign_grade( void ) const {return _sign_grade;}
+
+const int Form::get_exec_grade( void ) const {return (_exec_grade);}
+
+const bool Form::get_is_sign( void ) const {return (_is_sign);}
 
 const char* Form::GradeTooHighException::what() const throw(){
 	return "Grade is too high";
@@ -40,3 +44,8 @@ const char* Form::GradeTooLowException::what() const throw(){
 	return "Grade is too low";
 }
 
+std::ostream & operator<< (std::ostream &o, Form const & i)
+{
+	o << "[Form]" << i.get_name() <<"(" << i.get_is_sign() << ")"<< "," << i.get_sign_grade() << "," << i.get_exec_grade();
+	return (o);
+}

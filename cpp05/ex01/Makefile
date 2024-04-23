@@ -1,4 +1,4 @@
-NAME	= a.out
+NAME	= main
 
 CC		= c++
 RM		= rm -f
