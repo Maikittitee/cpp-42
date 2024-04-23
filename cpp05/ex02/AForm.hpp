@@ -33,9 +33,9 @@ class AForm{
 
 
 		// getter
-		std::string	get_name( void );
-		int		get_sign_grade( void );
-		int get_exec_grade( void );
+		const std::string	get_name( void ) const;
+		const int		get_sign_grade( void ) const;
+		const int get_exec_grade( void ) const;
 
 		// method
 		void	beSigned(Bureaucrat &bureaucrat);

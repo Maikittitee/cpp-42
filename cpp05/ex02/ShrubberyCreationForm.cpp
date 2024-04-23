@@ -54,6 +54,6 @@ std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-std::string ShrubberyCreationForm::get_target(void){ return _target;}
+const std::string ShrubberyCreationForm::get_target(void) const { return _target;}
 
 /* ************************************************************************** */

@@ -41,9 +41,9 @@ const char* AForm::GradeTooLowException::what() const throw(){
 	return "Grade is too low";
 }
 
-std::string	AForm::get_name( void ) {return _name;}
+const std::string	AForm::get_name( void ) const {return _name;}
 
-int	AForm::get_sign_grade( void ) {return _sign_grade;}
+const int	AForm::get_sign_grade( void ) const {return _sign_grade;}
 
-int AForm::get_exec_grade( void ) {return (_exec_grade);}
+const int AForm::get_exec_grade( void ) const {return (_exec_grade);}
 

@@ -25,11 +25,11 @@ Bureaucrat Bureaucrat::operator= (const Bureaucrat &rhs){
 	return *this;
 }
 
-int Bureaucrat::get_grade( void ){
+const int Bureaucrat::get_grade( void ) const {
 	return _grade;
 }
 
-const std::string Bureaucrat::get_name( void ){
+const std::string Bureaucrat::get_name( void ) const{
 	return _name;
 }
 
@@ -58,10 +58,16 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 void Bureaucrat::signForm( AForm &form ){
 	try{
 		form.beSigned(*this);
-		std::cout << this->_name << " signs " << form.getName() << std::endl;
+		std::cout << this->_name << " signs " << form.get_name() << std::endl;
 	}
 	catch (std::exception &e){
-		std::cout << this->_name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << this->_name << " cannot sign " << form.get_name() << " because " << e.what() << std::endl;
 	}
 
+}
+
+std::ostream & operator<<( std::ostream & o, Bureaucrat const & i )
+{
+	o <<  "[Bureaucrat] name:" << i.get_name() << ", grade:" << i.get_grade(); 
+	return (o);
 }
