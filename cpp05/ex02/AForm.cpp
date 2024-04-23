@@ -41,11 +41,17 @@ const char* AForm::GradeTooLowException::what() const throw(){
 	return "Grade is too low";
 }
 
+const char * AForm::IsNotSignException::what() const throw(){
+	return ("This Form is not sign yet!");
+}
+
 const std::string	AForm::get_name( void ) const {return _name;}
 
 const int	AForm::get_sign_grade( void ) const {return _sign_grade;}
 
 const int AForm::get_exec_grade( void ) const {return (_exec_grade);}
+
+const bool AForm::get_is_sign( void ) const {return (_is_sign);}
 
 
 std::ostream & operator<< (std::ostream &o, AForm const & i)

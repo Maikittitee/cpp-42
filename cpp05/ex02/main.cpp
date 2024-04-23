@@ -5,8 +5,12 @@
 
 int	main()
 {
-	RobotomyRequestForm b1("home");
+	ShrubberyCreationForm f1("home");
+	Bureaucrat b1("Mai", 1);
 
-	std::cout << b1 << std::endl;
+	b1.signForm(f1);
+	std::cout << "is sign: " << f1.get_is_sign() << std::endl;
+
+	f1.execute(b1);
 
 }

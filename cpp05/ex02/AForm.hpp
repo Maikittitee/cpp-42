@@ -31,11 +31,16 @@ class AForm{
 			const char* what() const throw();
 		};
 
+		class IsNotSignException: public std::exception{
+			const char *what() const throw();
+		};
+
 
 		// getter
 		const std::string	get_name( void ) const;
 		const int		get_sign_grade( void ) const;
 		const int get_exec_grade( void ) const;
+		const bool get_is_sign( void ) const;
 
 		// method
 		void	beSigned(Bureaucrat &bureaucrat);

@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include "AForm.hpp"
 
 class ShrubberyCreationForm: public AForm
@@ -18,6 +19,9 @@ class ShrubberyCreationForm: public AForm
 
 		// getter
 		const std::string get_target() const ;
+
+		// method 
+		void execute(Bureaucrat const& executor) const;
 
 	private:
 		std::string _target;

@@ -50,7 +50,51 @@ std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const
+{
+	std::ofstream	outfile;
+	std::string		filename;
 
+	if (!this->get_is_sign())
+		throw AForm::IsNotSignException();
+	if (executor.get_grade() > this->get_exec_grade())
+		throw AForm::GradeTooLowException();
+	filename = this->_target+"_shrubbery";
+	outfile.open(filename);
+	// if (!outfile.is_open())
+		// throw cannot open file;
+	outfile << "                                                         ." << std::endl;
+	outfile << "                                              .         ;  " << std::endl;
+	outfile << "                 .              .              ;%     ;;   " << std::endl;
+	outfile << "                   ,           ,                :;%  %;   " << std::endl;
+	outfile << "                    :         ;                   :;%;'     .,   " << std::endl;
+	outfile << "           ,.        %;     %;            ;        %;'    ,;" << std::endl;
+	outfile << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+	outfile << "              %;       %;%;      ,  ;       %;  ;%;   ,%;' " << std::endl;
+	outfile << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+	outfile << "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+	outfile << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+	outfile << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
+	outfile << "                      `@%:.  :;%.         ;@@%;' " << std::endl;
+	outfile << "                        `@%.  `;@%.      ;@@%;    " << std::endl;
+	outfile << "                          `@%%. `@%%    ;@@%;  " << std::endl;
+	outfile << "                            ;@%. :@%%  %@@%;" << std::endl;
+	outfile << "                              %@bd%%%bd%%:;  " << std::endl;
+	outfile << "                                #@%%%%%:;;" << std::endl;
+	outfile << "                                %@@%%%::;" << std::endl;
+	outfile << "                                %@@@%(o);  . '        " << std::endl;
+	outfile << "                                %@@@o%;:(.,'         " << std::endl;
+	outfile << "                            `.. %@@@o%::;         " << std::endl;
+	outfile << "                               `)@@@o%::;    " << std::endl;
+	outfile << "                                %@@(o)::;     " << std::endl;
+	outfile << "                               .%@@@@%::;       " << std::endl;
+	outfile << "                               ;%@@@@%::;.      " << std::endl;
+	outfile << "                              ;%@@@@%%:;;;. " << std::endl;
+	outfile << "                          ...;%@@@@@%%:;;;;,..    " << std::endl;
+
+
+
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
