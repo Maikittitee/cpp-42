@@ -4,9 +4,9 @@ CC		= c++
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRCS	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 
-HEADER	= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
+HEADER	= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 

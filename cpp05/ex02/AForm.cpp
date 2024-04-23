@@ -47,3 +47,9 @@ const int	AForm::get_sign_grade( void ) const {return _sign_grade;}
 
 const int AForm::get_exec_grade( void ) const {return (_exec_grade);}
 
+
+std::ostream & operator<< (std::ostream &o, AForm const & i)
+{
+	o << "[AForm]" << i.get_name() << "," << i.get_sign_grade() << "," << i.get_exec_grade();
+	return (o);
+}

@@ -1,10 +1,11 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
 
 int	main()
 {
-	Bureaucrat b1("Mai", 1);
+	RobotomyRequestForm b1("home");
 
 	std::cout << b1 << std::endl;
 
