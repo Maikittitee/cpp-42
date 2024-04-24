@@ -2,17 +2,14 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include "AForm.hpp"
 
 int	main()
 {
-	ShrubberyCreationForm f1("home");
-	// RobotomyRequestForm f1("home");
-	// PresidentialPardonForm f1("home");
-	Bureaucrat b1("Mai", 6);
+	Intern some_intern;
 
-	b1.signForm(f1);
-	b1.executeForm(f1);
-	std::cout << f1 << std::endl;
+	AForm *f1 = some_intern.makeForm("shrubbery creation", "eiei");
+	std::cout << *f1 << std::endl;
 
 }

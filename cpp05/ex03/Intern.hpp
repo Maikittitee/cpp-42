@@ -20,7 +20,7 @@ class Intern
 
 		Intern &operator=( Intern const & rhs );
 
-		Aform *makeForm(const std::string name, const std::string target) const
+		AForm *makeForm(const std::string name, const std::string target) const;
 };
 
 std::ostream &			operator<<( std::ostream & o, Intern const & i );

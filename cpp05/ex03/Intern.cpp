@@ -34,19 +34,23 @@ std::ostream &			operator<<( std::ostream & o, Intern const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-Aform *Intern::makeForm(const std::string name, const std::string target) const
+AForm *Intern::makeForm(const std::string name, const std::string target) const
 {
 	if (name == "shrubbery creation" ){
+		std::cout << "Itern creates " << name;
 		return new ShrubberyCreationForm(target);
 	}
 	else if (name == "robotomy request"){
+		std::cout << "Itern creates " << name;
 		return new RobotomyRequestForm(target);
 	}
 	else if (name == "presidential pardon"){
+		std::cout << "Itern creates " << name;
 		return new PresidentialPardonForm(target);
 	}else{
-		std::err << name << " form doesn't exist"  << std::endl;
+		std::cerr << name << " form doesn't exist"  << std::endl;
 	}
+	return (nullptr);
 
 }
 
