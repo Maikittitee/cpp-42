@@ -3,6 +3,9 @@
 
 #   include <iostream>
 #   include <string>
+# 	include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat{
 	private:
@@ -15,8 +18,10 @@ class Bureaucrat{
 		Bureaucrat(const std::string name, const int grade);
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat operator= (const Bureaucrat &rhs);
-		int get_grade( void );
-		const std::string get_name( void );
+
+		// getter
+		const int get_grade( void ) const;
+		const std::string get_name( void ) const;
 
 
 		class GradeTooHighException: public std::exception{
@@ -28,12 +33,16 @@ class Bureaucrat{
 				const char* what() const throw();
 		};
 
+
+		// method
 		void incrementGrade();
 		void decrementGrade();
 
 
 
 };
+
+std::ostream & operator<<( std::ostream & o, Bureaucrat const & i );
 
 
 #endif
