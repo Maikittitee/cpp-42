@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyRequestForm", 72, 45),_target(target) 
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("robotomy request", 72, 45),_target(target) 
 {
 	std::cout << "Robotomy Constructor Called" << std::endl;
 }
