@@ -11,6 +11,7 @@ class ScalarConverter{
 		ScalarConverter& operator= (const ScalarConverter &);
 		
 		static void convert(const char *str);
+	
 };
 
 
