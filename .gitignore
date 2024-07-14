@@ -1,5 +1,6 @@
 .DS_Store
 *.o
+convert
 a.out
 exe
 main
