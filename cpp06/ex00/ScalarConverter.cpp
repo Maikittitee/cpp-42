@@ -73,14 +73,15 @@ void _convertChar(double num, char *endptr, std::string str){
 }
 
 void _convertInt(double num, char *endptr, std::string str){
-	if (*endptr == '\0' || _isFloat(endptr, std::string(str)))
+	if ( !isnan(num) && (*endptr == '\0' || _isFloat(endptr, std::string(str))))
 		std::cout << "int: " << static_cast<int>(num) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
 }
 
 void _convertFloat(double num, char *endptr, std::string str){
-
+	if (*endptr == '\0' || _isFloat(endptr, std::string(str)))
+		std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
 }
 
 void _convertDouble(double num, char *endptr, std::string str){
