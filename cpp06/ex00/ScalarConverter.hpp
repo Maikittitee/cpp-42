@@ -3,6 +3,11 @@
 
 # include <iostream>
 
+enum e_type
+{
+	e_float, e_double
+};
+
 class ScalarConverter{
 	public:
 		ScalarConverter();

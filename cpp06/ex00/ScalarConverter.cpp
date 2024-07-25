@@ -58,8 +58,6 @@ void ScalarConverter::convert(const char *str)
 
 void _convertChar(double num, char *endptr, std::string str){
 
-	// std::cout << "min char: " << (int)std::numeric_limits<char>::min() << std::endl;
-	// std::cout << "min char: " << (int)std::numeric_limits<char>::max() << std::endl;
 
 	// print able
 	if ((*endptr == '\0' || _isFloat(endptr, std::string(str)))  && num >= 32 && num <= 126)
@@ -80,17 +78,27 @@ void _convertInt(double num, char *endptr, std::string str){
 }
 
 void _convertFloat(double num, char *endptr, std::string str){
+	if (scienceNotation(std::string(str), e_float))
 	if (*endptr == '\0' || _isFloat(endptr, std::string(str)))
 		std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
+	else
+		std::cout << "float: impossible" << std::endl;	
 }
 
 void _convertDouble(double num, char *endptr, std::string str){
-
+	if (*endptr == '\0' || _isFloat(endptr, std::string(str)))
+		std::cout << "double: " << static_cast<float>(num) << std::endl;
+	else 
+		std::cout << "double: impossible" << std::endl;
 }
 
 bool _isFloat(char *endptr, std::string str){
 	if ((*endptr == 'f' && *(endptr + 1) == '\0' && str.find_last_of(".", endptr - &str.at(0)) != std::string::npos))
 		return (true);
 	return (false);
+
+}
+
+static bool	scienceNotation(std::string str, int type){
 
 }
