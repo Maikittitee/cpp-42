@@ -2,6 +2,8 @@
 # define SCALAR_CONVERTER_HPP
 
 # include <iostream>
+# include <string>
+# include <sstream>
 
 enum e_type
 {
