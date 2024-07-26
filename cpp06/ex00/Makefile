@@ -2,7 +2,7 @@ NAME	= convert
 
 CC		= c++
 RM		= rm -f
-CFLAGS	= -std=c++98 #-Wall -Wextra -Werror 
+CFLAGS	= -std=c++98 -Wall -Wextra -Werror 
 
 SRCS	= main.cpp ScalarConverter.cpp
 

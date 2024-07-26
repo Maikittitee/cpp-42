@@ -19,26 +19,28 @@ static void	_convertFloat(double num, char* endptr, std::string str);
 static void	_convertDouble(double num, char* endptr, std::string str);
 static bool	scienceNotation(std::string str, int type);
 
-ScalarConverter::ScalarConverter()
+ScalarConverter::ScalarConverter(void)
 {
 	
 }
 
-ScalarConverter::~ScalarConverter()
+ScalarConverter::~ScalarConverter(void)
 {
 
 }
 
 ScalarConverter::ScalarConverter(ScalarConverter &other)
 {
-
+	static_cast<void>(other);
 }
 
 
 
 std::ostream &operator<< (std::ostream &os, const ScalarConverter &sc)
 {
- return (os);
+	static_cast<void>(sc);
+	os << "Scalar Converter object";
+	return (os);
 }
 
 
