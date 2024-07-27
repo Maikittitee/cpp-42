@@ -1,33 +1,21 @@
 #include "Serialize.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
 Serialize::Serialize()
 {
 }
 
 Serialize::Serialize( const Serialize & src )
 {
+	static_cast<void>(src);
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 Serialize::~Serialize()
 {
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
 Serialize &				Serialize::operator=( Serialize const & rhs )
 {
+	static_cast<void>(rhs);
 	//if ( this != &rhs )
 	//{
 		//this->_value = rhs.getValue();
@@ -37,19 +25,19 @@ Serialize &				Serialize::operator=( Serialize const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Serialize const & i )
 {
+	static_cast<void>(i);
 	//o << "Value = " << i.getValue();
 	return o;
 }
 
 
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
+uintptr_t  Serialize::serialize(Data* ptr)
+{
+	return reinterpret_cast<uintptr_t>(ptr);
+}
 
+Data* Serialize::deserialize(uintptr_t raw)
+{
+	return reinterpret_cast<Data *>(raw);
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */
+}

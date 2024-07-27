@@ -3,9 +3,7 @@
 
 # include <iostream>
 # include <string>
-
-class Data;
-
+# include "Data.hpp"
 class Serialize
 {
 

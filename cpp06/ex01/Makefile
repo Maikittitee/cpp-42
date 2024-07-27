@@ -4,9 +4,9 @@ CC		= c++
 RM		= rm -f
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror 
 
-SRCS	= main.cpp ScalarConverter.cpp
+SRCS	= main.cpp Serialize.cpp
 
-HEADER	= ScalarConverter.hpp
+HEADER	= Serialize.hpp Data.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
