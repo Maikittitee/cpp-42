@@ -1,4 +1,4 @@
-NAME	= convert
+NAME	= main
 
 CC		= c++
 RM		= rm -f
