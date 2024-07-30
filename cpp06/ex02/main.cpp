@@ -2,6 +2,7 @@
 # include "A.hpp"
 # include "B.hpp"
 # include "C.hpp"
+# include <exception> 
 
 
 class D: public Base{};
@@ -37,15 +38,15 @@ void identify(Base& p){
 	try {
 		(void)dynamic_cast<A &>(p);
 		std::cout << "p is reference of A" << std::endl;
-	} catch (std::bad_cast) {}
+	} catch (std::exception & e) {}
 	try {
 		(void)dynamic_cast<B &>(p);
 		std::cout << "p is reference of B" << std::endl;	
-	} catch (std::bad_cast) {}
+	} catch (std::exception & e) {}
 	try {
 		(void)dynamic_cast<C &>(p);
 		std::cout << "p is reference of C" << std::endl;
-	} catch (std::bad_cast) {}
+	} catch (std::exception & e) {}
 }
 
 int	main()
