@@ -4,6 +4,9 @@
 # include <iostream>
 # include <string>
 # include <sstream>
+# include <limits>
+# include <math.h>
+# include <stdlib.h>
 
 enum e_type
 {

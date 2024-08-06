@@ -96,7 +96,7 @@ void _convertFloat(double num, char *endptr, std::string str){
 }
 
 void _convertDouble(double num, char *endptr, std::string str){
-	if (scienceNotation(std::string(str), e_float))
+	if (scienceNotation(std::string(str), e_double))
 	{
 		return;
 	}
