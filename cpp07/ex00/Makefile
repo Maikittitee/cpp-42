@@ -1,12 +1,12 @@
-NAME	= convert
+NAME	= main
 
 CC		= c++
 RM		= rm -f
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror 
 
-SRCS	= main.cpp ScalarConverter.cpp
+SRCS	= main.cpp
 
-HEADER	= ScalarConverter.hpp
+HEADER	= whatever.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
