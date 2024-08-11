@@ -18,6 +18,7 @@ class Array{
 		class OutOfRangeException : public std::exception {
 			const char* what() const throw() {return "index is out of bounds";}
 		};
+		
 	private:
 		unsigned int	_size;
 		T	*_array;
