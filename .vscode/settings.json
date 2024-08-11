@@ -72,7 +72,8 @@
 		"variant": "cpp",
 		"compare": "cpp",
 		"concepts": "cpp",
-		"*.tpp": "cpp"
+		"*.tpp": "cpp",
+		"execution": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }
