@@ -1,9 +1,10 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
-# include "Array.tpp"
+# include <exception>
+# include <iostream>
 
-template<typename T>
+template<class T>
 class Array{
 	public:
 		Array();
@@ -18,13 +19,10 @@ class Array{
 		class OutOfRangeException : public std::exception {
 			const char* what() const throw() {return "index is out of bounds";}
 		};
-		
+
 	private:
 		unsigned int	_size;
 		T	*_array;
-
-
-
 };
 
 #include "Array.tpp"

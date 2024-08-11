@@ -6,7 +6,7 @@ CFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
 SRCS	= main.cpp
 
-HEADER	= iter.hpp
+HEADER	= Array.hpp
 
 OBJS	= $(SRCS:.cpp=.o)
 

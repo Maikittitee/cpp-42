@@ -1,14 +1,11 @@
 #ifndef ARRAY_TPP
 # define ARRAY_TPP
 
-# include "Array.hpp"
-
 template<typename T>
 Array<T>::Array() : _size(1), _array(new T()) {}
 
 template<typename T>
 Array<T>::Array(unsigned int n) : _size(n), _array(new T[n]) {}
-
 
 template<typename T>
 Array<T>::Array(Array const& other) : _size(other._size) {

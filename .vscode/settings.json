@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+		".fantomasignore": "ignore",
 		"__bit_reference": "cpp",
 		"__config": "cpp",
 		"__debug": "cpp",
@@ -70,7 +71,8 @@
 		"clocale": "cpp",
 		"variant": "cpp",
 		"compare": "cpp",
-		"concepts": "cpp"
+		"concepts": "cpp",
+		"*.tpp": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }
