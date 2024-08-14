@@ -3,7 +3,7 @@
 
 # include <exception>
 # include <vector>
-
+# include <algorithm>
 class Span{
 	private:
 		unsigned int _maxn;
