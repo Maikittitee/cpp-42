@@ -7,7 +7,7 @@
 class Span{
 	private:
 		unsigned int _maxn;
-		unsigned int index;
+		unsigned int _index;
 		std::vector<int> _vec;
 
 	public:

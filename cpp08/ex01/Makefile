@@ -4,9 +4,9 @@ CC		= c++
 RM		= rm -f
 CFLAGS	= -std=c++98 -Wall -Wextra -Werror 
 
-SRCS	= main.cpp
+SRCS	= main.cpp Span.cpp
 
-HEADER	= easyfind.hpp 
+HEADER	= Span.hpp 
 
 OBJS	= $(SRCS:.cpp=.o)
 

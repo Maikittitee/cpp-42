@@ -3,8 +3,7 @@
 
 
 int	main(){
-	Span hello;
+	Span hello(0);
 
-	std::cout << hello << std::endl;
 
 }
