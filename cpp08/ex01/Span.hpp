@@ -3,7 +3,9 @@
 
 # include <exception>
 # include <vector>
+# include <iostream>
 # include <algorithm>
+# include <map>
 class Span{
 	private:
 		unsigned int _maxn;
@@ -15,7 +17,7 @@ class Span{
 		Span(Span const& other);
 		Span&	operator=(Span const& rhs);
 		~Span();
-		void AddNumber(int n);
+		void addNumber(int n);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 		unsigned int	size() const;
@@ -28,7 +30,7 @@ class Span{
 		};
 
 		class OneNumber: public std::exception{
-			const char*	what() const throw() {return "Span length is 1: Can't found ";}		
+			const char*	what() const throw() {return "Span length is 1: Cannot Compare Span";}		
 		};
 };
 
