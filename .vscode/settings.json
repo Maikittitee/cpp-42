@@ -75,7 +75,8 @@
 		"*.tpp": "cpp",
 		"execution": "cpp",
 		"__tree": "cpp",
-		"map": "cpp"
+		"map": "cpp",
+		"list": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
