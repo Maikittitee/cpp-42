@@ -18,8 +18,22 @@ Span&	Span::operator=(Span const& rhs) {
 Span::~Span(){}
 
 void Span::addNumber(int n){
-	if (_vec.size() < _maxn)
+	if (_vec.size() < _maxn){
 		_vec.push_back(n);
+		_index++;
+	}
+	else {
+		throw Span::SpanFull();
+	}
+}
+
+void Span::addRangeNumber(int start, int end){
+	for (int i = start; i < end; i++){
+		if (_vec.size() >= _maxn)
+			throw Span::SpanFull();
+		_vec.push_back(i);
+		_index++;
+	}
 }
 
 unsigned int	Span::shortestSpan(){
@@ -61,5 +75,21 @@ unsigned int	Span::longestSpan(){
 }
 
 unsigned int	Span::size() const{
-	return (1);
+	return (_vec.size());
+}
+
+std::vector<int> Span::getvec() const{
+	return (_vec);
+}
+
+
+std::ostream &operator<<(std::ostream &os, const Span& span){
+	std::vector<int> tmp = span.getvec();
+
+
+
+	for (unsigned int i = 0; i < tmp.size(); i++){
+		os << tmp[i] << " ";
+	}
+	return (os);
 }

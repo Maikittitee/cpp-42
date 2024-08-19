@@ -18,9 +18,12 @@ class Span{
 		Span&	operator=(Span const& rhs);
 		~Span();
 		void addNumber(int n);
+		void addRangeNumber(int start, int end);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 		unsigned int	size() const;
+
+		std::vector<int> getvec() const;
 		class SpanFull: public std::exception{
 			const char*	what() const throw() {return "Span is full.";}		
 		};
@@ -34,5 +37,6 @@ class Span{
 		};
 };
 
+std::ostream &operator<<(std::ostream &os, const Span& span);
 
 #endif

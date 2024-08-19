@@ -73,7 +73,9 @@
 		"compare": "cpp",
 		"concepts": "cpp",
 		"*.tpp": "cpp",
-		"execution": "cpp"
+		"execution": "cpp",
+		"__tree": "cpp",
+		"map": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
