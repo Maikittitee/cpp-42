@@ -29,7 +29,18 @@ unsigned int	Span::shortestSpan(){
 	if (_vec.size() == 1)
 		throw Span::OneNumber();
 
-
+	std::vector<int>	tmp(_vec);
+	std::sort(tmp.begin(), tmp.end());
+	unsigned int	shortNum = 4294967295;
+	unsigned int	num;
+	for (unsigned int i = 0; i + 1 < tmp.size(); i++)
+	{
+		num = static_cast<unsigned int>(abs(static_cast<long>(tmp[i + 1])
+			- static_cast<long>(tmp[i])));
+		if (num > 0 && num < shortNum)
+			shortNum = num;
+	}
+	return (shortNum);
 }
 
 unsigned int	Span::longestSpan(){
@@ -46,12 +57,7 @@ unsigned int	Span::longestSpan(){
 	if (min_iter == tmp.end())
 		throw Span::SpanEmpty();
 	int min = *min_iter;
-
-	return (max - min);
-
-
-
-	return (1);
+	return (static_cast<unsigned int>(max - min));
 }
 
 unsigned int	Span::size() const{
