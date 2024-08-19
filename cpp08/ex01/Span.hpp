@@ -5,7 +5,7 @@
 # include <vector>
 # include <iostream>
 # include <algorithm>
-# include <map>
+# include <cmath>
 class Span{
 	private:
 		unsigned int _maxn;

@@ -49,8 +49,7 @@ unsigned int	Span::shortestSpan(){
 	unsigned int	num;
 	for (unsigned int i = 0; i + 1 < tmp.size(); i++)
 	{
-		num = static_cast<unsigned int>(abs(static_cast<long>(tmp[i + 1])
-			- static_cast<long>(tmp[i])));
+		num = static_cast<unsigned int>(tmp[i + 1]- tmp[i]);
 		if (num > 0 && num < shortNum)
 			shortNum = num;
 	}
