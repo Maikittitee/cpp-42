@@ -6,6 +6,7 @@
 # include <fstream>
 # include <string>
 # include <cstdlib>
+# include <limits>
 
 typedef	std::map<std::string, float>	date_price_t;
 
@@ -14,12 +15,19 @@ enum month_e
 	Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 };
 
+struct date_num_t
+{
+	std::string	date;
+	std::string	num;
+};
+
 class BTC{
 	private:
 		date_price_t	_database;
 		std::string		_lowestDate;
 
-		void _setDatabase(std::string filename);
+		void	_setDatabase(std::string filename);
+		float	_getPrice(const std::string& date) const;
 	
 	public:
 		BTC(std::string filename);

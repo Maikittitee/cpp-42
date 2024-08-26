@@ -3,5 +3,6 @@
 int	main(){
 	BTC btc("data.csv");
 
-	std::cout << btc.getDatabase() << std::endl;	
+	// std::cout << btc.getDatabase() << std::endl;
+	btc.evaluate("input.txt");	
 }
