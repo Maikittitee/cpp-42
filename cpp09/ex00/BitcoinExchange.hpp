@@ -4,6 +4,9 @@
 # include <iostream>
 # include <map>
 # include <fstream>
+# include <string>
+# include <cstdlib>
+
 typedef	std::map<std::string, float>	date_price_t;
 
 enum month_e
@@ -23,6 +26,7 @@ class BTC{
 		BTC(BTC const& other);
 		BTC&	operator=(BTC const& rhs);
 		~BTC();
+		date_price_t getDatabase(void) const;
 
 		void	evaluate(char* fileName) const;
 
@@ -35,5 +39,7 @@ class BTC{
 		};
 
 };
+
+std::ostream &operator<<(std::ostream &os, const date_price_t &date_price);
 
 #endif

@@ -2,5 +2,6 @@
 
 int	main(){
 	BTC btc("data.csv");
-	
+
+	std::cout << btc.getDatabase() << std::endl;	
 }
