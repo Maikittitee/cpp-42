@@ -20,7 +20,7 @@ class RPN {
 		std::string			_postfix;
 };
 
-std::ostream &operator<<(std::ostream &os, const std::stack<std::string> &stack);
+std::ostream &operator<<(std::ostream &os, const std::stack<char> &stack);
 
 
 #endif
