@@ -7,6 +7,8 @@
 # include <string>
 # include <cstdlib>
 # include <limits>
+# include <sstream>
+# include <iomanip>
 
 typedef	std::map<std::string, float>	date_price_t;
 

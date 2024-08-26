@@ -39,11 +39,15 @@ void	BTC::evaluate(char* fileName) const{
 			continue ;
 		if (!validNumber(input.num))
 			continue ;
+		float output =  _getPrice(input.date) * atof((input.num).c_str());
+		std::stringstream output_string;
+		output_string << output;
 		std::cout << input.date << " => " << input.num\
-		<< " = " << _getPrice(input.date) * atof((input.num).c_str())  << std::endl;
+		<< " = "  << output_string.str() << std::endl;
 	}
 	inputFile.close();
 }
+
 
 void BTC::_setDatabase(std::string filename){
 	std::fstream file;
@@ -118,19 +122,19 @@ static bool	validFormat(std::string const& line, date_num_t& input)
 	
 	pos = line.find("|");
 	if (pos == std::string::npos){
-		std::cerr << "Error: Bad input: " << line << std::endl;
+		std::cerr << "Error: Bad input => " << line << std::endl;
 		return (false);
 	}
 	date = line.substr(0, pos);
 	ft_strtirm(date, " \t");
 	if (!isdate_str(date)){
-		std::cerr << "Error: Bad inout: " << line << std::endl;
+		std::cerr << "Error: Bad input => " << line << std::endl;
 		return (false);	
 	}
 	number = line.substr(pos + 1);
 	ft_strtirm(number, " \t");
 	if (!is_str_all_digit(number)){
-		std::cerr << "Error: Bad input: " << line << std::endl;
+		std::cerr << "Error: Bad input => " << line << std::endl;
 		return (false);
 	}
 	input.date = date;
@@ -168,9 +172,9 @@ static bool	validNumber(std::string number)
 	long	num = atol(number.c_str());
 
 	if (num > std::numeric_limits<int>::max() || number.length() >> 11)
-		std::cerr << "Too large number." << std::endl;
+		std::cerr << "Error: too large a number." << std::endl;
 	else if (num <= 0)
-		std::cerr << "accpet only positive number" << std::endl;
+		std::cerr << "Error: not a positive number." << std::endl;
 	else
 		return true;
 	return false;
