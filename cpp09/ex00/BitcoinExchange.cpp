@@ -4,12 +4,16 @@ BTC::BTC(std::string filename){
 	_setDatabase(filename);
 }
 
-BTC::BTC(BTC const& other){
+BTC::BTC(BTC const& other): _database(other._database), _lowestDate(other._lowestDate){
 
 }
 
 BTC&	BTC::operator=(BTC const& rhs){
-
+	if (this != &rhs){
+		_database = rhs._database;
+		_lowestDate = rhs._lowestDate;
+	}
+	return (*this);
 }
 
 BTC::~BTC(){
