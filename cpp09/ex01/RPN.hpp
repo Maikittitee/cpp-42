@@ -6,6 +6,7 @@
 #	include <string>
 #	include <algorithm>
 #	include <cstdlib>
+#	include <sstream>
 
 
 class RPN {

@@ -22,6 +22,14 @@ RPN::~RPN(){
 }
 
 bool RPN::evaluate(){
+	std::string str;
+	std::istringstream	iss(_postfix);
+	
+	do {
+		iss >> str;
+		std::cout << "current: " << str << std::endl;
+	} while (!iss.eof());
+
 
 	return (true);
 }
