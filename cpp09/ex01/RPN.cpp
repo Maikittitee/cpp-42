@@ -21,8 +21,9 @@ RPN::~RPN(){
 
 }
 
-int RPN::evaluate(){
- return (1);
+bool RPN::evaluate(){
+
+	return (true);
 }
 
 std::ostream &operator<<(std::ostream &os, const std::stack<char> &stack){
@@ -37,4 +38,27 @@ std::ostream &operator<<(std::ostream &os, const std::stack<char> &stack){
 	}
 	os << "+++++++++" << std::endl;
 	return (os);
+}
+
+bool	RPN::_isNumbers(std::string str)
+{
+	size_t	i = 0;
+	while (str[i])
+	{
+		if (!isdigit(str[i]))
+			return false;
+		i++;
+	}
+	if (i == 1)
+		return true;
+	std::cerr << "Error : Numbers must less than 10." << std::endl;
+	return (false);
+}
+
+bool	RPN::_isOperator(std::string str)
+{
+	if ((str[0] == '+' || str[0] == '-' || str[0] == '*' || str[0] == '/') && !str[1])
+		return true;
+	else
+		return false;
 }

@@ -14,10 +14,13 @@ class RPN {
 		RPN(const RPN &other);
 		RPN& operator=(const RPN &rhs);
 		~RPN();
-		int evaluate();
+		bool evaluate();
 	private:
 		std::stack<char>	_stack;
 		std::string			_postfix;
+
+		bool	_isNumbers(std::string str);
+		bool	_isOperator(std::string str);
 };
 
 std::ostream &operator<<(std::ostream &os, const std::stack<char> &stack);
