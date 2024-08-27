@@ -5,7 +5,8 @@ int main(int ac, char **av){
 		exit(1);
 	
 	RPN rpn(av[1]);
-	rpn.evaluate();
+	if (!rpn.evaluate())
+		std::cerr << "Error" << std::endl;
 }
 
 // int	main(){
