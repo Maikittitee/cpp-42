@@ -27,17 +27,17 @@ bool RPN::evaluate(){
 	
 	do {
 		iss >> str;
-		// std::cout << "iter: " << str << std::endl;
-		// std::cout << _stack << std::endl;
+		std::cout << "iter: " << str << std::endl;
+		std::cout << _stack << std::endl;
 		if (_isNumbers(str))
 			_stack.push(std::atoi(str.c_str()));
 		else if (_isOperator(str)){
 			if (_stack.size() < 2)
 				return (false);
 			else {
-				int n1 = _stack.top();
+				float n1 = _stack.top();
 				_stack.pop();
-				int n2 = _stack.top();
+				float n2 = _stack.top();
 				_stack.pop();
 				switch (str[0])
 				{
@@ -58,6 +58,10 @@ bool RPN::evaluate(){
 				}
 			}
 		}
+		else if (str.empty())
+			continue;
+		else
+			return (false);
 	} while (!iss.eof());
 	if (_stack.size() != 1)
 		return (false);
@@ -65,8 +69,8 @@ bool RPN::evaluate(){
 	return (true);
 }
 
-std::ostream &operator<<(std::ostream &os, const std::stack<int> &stack){
-	std::stack<int> tmp;
+std::ostream &operator<<(std::ostream &os, const std::stack<float> &stack){
+	std::stack<float> tmp;
 
 	tmp = stack;
 	unsigned int size = tmp.size();

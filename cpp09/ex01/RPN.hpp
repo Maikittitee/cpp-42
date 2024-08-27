@@ -17,14 +17,14 @@ class RPN {
 		~RPN();
 		bool evaluate();
 	private:
-		std::stack<int>	_stack;
+		std::stack<float>	_stack;
 		std::string			_postfix;
 
 		bool	_isNumbers(std::string str);
 		bool	_isOperator(std::string str);
 };
 
-std::ostream &operator<<(std::ostream &os, const std::stack<int> &stack);
+std::ostream &operator<<(std::ostream &os, const std::stack<float> &stack);
 
 
 #endif
