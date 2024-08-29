@@ -27,8 +27,8 @@ bool RPN::evaluate(){
 	
 	do {
 		iss >> str;
-		std::cout << "iter: " << str << std::endl;
-		std::cout << _stack << std::endl;
+		// std::cout << "iter: " << str << std::endl;
+		// std::cout << _stack << std::endl;
 		if (_isNumbers(str))
 			_stack.push(std::atoi(str.c_str()));
 		else if (_isOperator(str)){

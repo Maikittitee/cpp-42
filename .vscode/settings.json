@@ -83,7 +83,8 @@
 		"random": "cpp",
 		"numbers": "cpp",
 		"ranges": "cpp",
-		"span": "cpp"
+		"span": "cpp",
+		"cinttypes": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
