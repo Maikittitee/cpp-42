@@ -1,10 +1,14 @@
 #ifndef PMERGEME_HPP
 #	define PMERGEME_HPP
 
-#	include <iostream>
-#	include <vector>
-#	include <deque>
-
+#include <iostream>
+#include <vector>
+#include <deque>
+#include <cstdlib>		// atol()
+#include <iomanip>		// std::setprecision
+#include <limits>		// MAX_INT
+#include <cstring>		// strlen()
+#include <sys/time.h>
 
 struct pair_t
 {
