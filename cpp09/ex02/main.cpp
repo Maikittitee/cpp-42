@@ -1,31 +1,27 @@
 #include "PmergeMe.hpp"
+#include <cstdlib>
+#include <ctime>
+
+static std::vector<unsigned int> randomn_uint(size_t n){
+	    
+	std::vector<unsigned int> result;
+
+    std::srand(std::time(0));
+
+    for (size_t i = 0; i < n; ++i) {
+        unsigned int randomValue = static_cast<unsigned int>(std::rand()) % 10;
+        result.push_back(randomValue);
+    }
+
+    return result;	
+} 
 
 int	main(){
-	std::vector<int> vec;
+	std::vector<unsigned int> vec;
 
-	vec.push_back(5);
-	vec.push_back(4);
-	vec.push_back(2);
-	vec.push_back(1);
-	vec.push_back(9);
-	vec.push_back(3);
+	vec = randomn_uint(11);
 
-	std::cout << vec[0] << std::endl;
-	std::cout << vec[1] << std::endl;
-	std::cout << vec[2] << std::endl;
-	std::cout << vec[3] << std::endl;
-	std::cout << vec[4] << std::endl;
-	std::cout << vec[5] << std::endl;
+	std::cout << "Input: " << vec << std::endl;
 
-	std::cout << "----" << std::endl;
-
-	// MergeSort(vec, 0, vec.size() - 1);
-	InsertionSort(vec);
-
-	std::cout << vec[0] << std::endl;
-	std::cout << vec[1] << std::endl;
-	std::cout << vec[2] << std::endl;
-	std::cout << vec[3] << std::endl;
-	std::cout << vec[4] << std::endl;
-	std::cout << vec[5] << std::endl;
+	mergeInsertSort(vec);
 }
