@@ -32,5 +32,15 @@ void	Merge(std::vector<int> &vec, size_t start, size_t middle, size_t end){
 }
 
 void	InsertionSort(std::vector<int> &vec){
-	
+	size_t n = vec.size();
+
+	for (size_t i = 1; i < n; i++){
+		size_t j = i - 1; // j will be 0...n-1
+		int target = vec[i];
+		while (j >= 0 && vec[j] > target){
+			vec[j + 1] = vec[j];
+			j--;
+		}
+		vec[j + 1] = target;
+	}
 }

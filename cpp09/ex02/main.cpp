@@ -19,7 +19,8 @@ int	main(){
 
 	std::cout << "----" << std::endl;
 
-	MergeSort(vec, 0, vec.size() - 1);
+	// MergeSort(vec, 0, vec.size() - 1);
+	InsertionSort(vec);
 
 	std::cout << vec[0] << std::endl;
 	std::cout << vec[1] << std::endl;
