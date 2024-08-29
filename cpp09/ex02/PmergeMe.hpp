@@ -12,6 +12,7 @@ struct pair_t
 };
 
 void	mergeInsertSort(std::vector<unsigned int> & nums);
+void	mergeInsertSort(std::deque<unsigned int> & nums);
 
 
 void	mergeSort(std::vector<int> &vec, size_t start, size_t end);
@@ -21,5 +22,7 @@ void	insertionSort(std::vector<int> &vec);
 std::ostream &operator<<(std::ostream &os, const std::vector<pair_t> & pairs);
 std::ostream &operator<<(std::ostream &os, const std::vector<unsigned int> & nums);
 std::ostream &operator<<(std::ostream &os, const pair_t & pair);
+std::ostream &operator<<(std::ostream &os, const std::deque<unsigned int> & q);
+std::ostream &operator<<(std::ostream &os, const std::deque<pair_t> & pairs);
 
 #endif

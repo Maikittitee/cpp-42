@@ -12,20 +12,21 @@ void	mergeInsertSort(std::vector<unsigned int> & nums){
 	if (nums.size() % 2 != 0){
 		pend_chain.push_back(nums.back());
 		nums.pop_back();
-		std::cout << "last: " << pend_chain[0] << std::endl;
+		// std::cout << "last: " << pend_chain[0] << std::endl;
 	}	
 	pairs = get_pair(nums);
 	mergeSort(pairs, 0, pairs.size() - 1);
-	std::cout << "pairs: " << pairs << std::endl;
+	// std::cout << "pairs: " << pairs << std::endl;
 
 	for (size_t i = 0; i < pairs.size(); i++){
 		main_chain.push_back(pairs[i].first);
 		pend_chain.push_back(pairs[i].second);
 	}
-	std::cout << "main: " << main_chain << std::endl;
-	std::cout << "pend: " << pend_chain << std::endl;
+	// std::cout << "main: " << main_chain << std::endl;
+	// std::cout << "pend: " << pend_chain << std::endl;
 	insertionSort(main_chain, pend_chain);
-	std::cout << main_chain << std::endl;
+	// std::cout << main_chain << std::endl;
+	nums = main_chain;
 }
 
 static std::vector<pair_t> get_pair(std::vector<unsigned int> & nums){
@@ -81,6 +82,100 @@ static void insertionSort(std::vector<unsigned int> &main_chain, std::vector<uns
         main_chain.insert(it, key);
     }
 }
+
+// -------------- QUEUEEEEEEEEEEEEEEEE -----------------------------------
+
+static void mergeSort(std::deque<pair_t> &pairs, size_t start, size_t end);
+static void merge(std::deque<pair_t> &pairs, size_t start, size_t middle, size_t end);
+static std::deque<pair_t> get_pair(std::deque<unsigned int> & nums);
+static void insertionSort(std::deque<unsigned int> &main_chain, std::deque<unsigned int> &pend_chain);
+
+void	mergeInsertSort(std::deque<unsigned int> & nums){
+	std::deque<pair_t> pairs;
+	std::deque<unsigned int> main_chain;
+	std::deque<unsigned int> pend_chain;
+	if (nums.size() % 2 != 0){
+		pend_chain.push_back(nums.back());
+		nums.pop_back();
+		// std::cout << "last: " << pend_chain[0] << std::endl;
+	}	
+	pairs = get_pair(nums);
+	mergeSort(pairs, 0, pairs.size() - 1);
+	// std::cout << "pairs: " << pairs << std::endl;
+
+	for (size_t i = 0; i < pairs.size(); i++){
+		main_chain.push_back(pairs[i].first);
+		pend_chain.push_back(pairs[i].second);
+	}
+	// std::cout << "main: " << main_chain << std::endl;
+	// std::cout << "pend: " << pend_chain << std::endl;
+	insertionSort(main_chain, pend_chain);
+	// std::cout << main_chain << std::endl;
+	nums = main_chain;
+}
+
+static std::deque<pair_t> get_pair(std::deque<unsigned int> & nums){
+	std::deque<pair_t> ret;
+
+	for (size_t i = 0; i < nums.size() - 1; i += 2){
+		size_t j = i + 1;
+		if (nums[i] < nums[j])
+			ret.push_back((pair_t){nums[i], nums[j]});
+		else
+			ret.push_back((pair_t){nums[j], nums[i]});
+	}
+
+	return (ret);
+}
+
+static void mergeSort(std::deque<pair_t> &pairs, size_t start, size_t end){
+	if (start >= end)
+		return;
+	int middle = (end + start) / 2;
+	mergeSort(pairs, start, middle);
+	mergeSort(pairs, middle + 1, end);
+	merge(pairs, start, middle, end);
+}
+
+static void merge(std::deque<pair_t> &pairs, size_t start, size_t middle, size_t end){
+	std::deque<pair_t> left(pairs.begin() + start, pairs.begin() + middle + 1);
+	std::deque<pair_t> right(pairs.begin() + middle + 1, pairs.begin() + end + 1);
+	
+	std::deque<pair_t>::iterator it1 = left.begin();
+	std::deque<pair_t>::iterator it2 = right.begin();
+
+	for (size_t i = start; i < end + 1; i++){
+		if (it1 == left.end() && it2 != right.end())
+			pairs[i] = *(it2++);
+		else if (it1 != left.end() && it2 == right.end())
+			pairs[i] = *(it1++);
+		else if (it1->first < it2->first)
+			pairs[i] = *(it1++);
+		else
+			pairs[i] = *(it2++);
+	}
+
+}
+
+static void insertionSort(std::deque<unsigned int> &main_chain, std::deque<unsigned int> &pend_chain) {
+    for (size_t i = 0; i < pend_chain.size(); ++i) {
+        unsigned int key = pend_chain[i];
+        std::deque<unsigned int>::iterator it = main_chain.begin();
+        while (it != main_chain.end() && *it < key) {
+            ++it;
+        }
+        main_chain.insert(it, key);
+    }
+}
+
+
+
+
+
+
+
+// display
+
 std::ostream &operator<<(std::ostream &os, const std::vector<unsigned int> & nums){
 	size_t i;
 	for (i = 0; i < nums.size() - 1; i++){
@@ -105,11 +200,23 @@ std::ostream &operator<<(std::ostream &os, const pair_t & pair){
 }
 
 
+std::ostream &operator<<(std::ostream &os, const std::deque<unsigned int> & q){
+    std::deque<unsigned int>::const_iterator it;
 
+    for (it = q.begin(); it != q.end(); ++it)
+        std::cout  << *it << ", ";
+    std::cout << '\n';
+	return (os);
+}
 
+std::ostream &operator<<(std::ostream &os, const std::deque<pair_t> & q){
+    std::deque<pair_t>::const_iterator it;
 
-
-
+    for (it = q.begin(); it != q.end(); ++it)
+        std::cout  << *it << ", ";
+    std::cout << '\n';
+	return (os);
+}
 
 
 
